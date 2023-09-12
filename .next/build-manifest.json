@@ -1,39 +1,33 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills-af28de04c604a2479390.js"
+    "static/chunks/polyfills.js"
   ],
-  "devFiles": [],
-  "ampDevFiles": [],
+  "devFiles": [
+    "static/chunks/react-refresh.js"
+  ],
+  "ampDevFiles": [
+    "static/chunks/webpack.js",
+    "static/chunks/amp.js"
+  ],
   "lowPriorityFiles": [
-    "static/1hXCAz01I3eWG8ynoQ4lM/_buildManifest.js",
-    "static/1hXCAz01I3eWG8ynoQ4lM/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/webpack-a99eb8ca73460c4decfc.js",
-      "static/chunks/framework.57a22ac5870571c2eff5.js",
-      "static/chunks/commons.23803713b93df69f8c70.js",
-      "static/chunks/main-2dc3ca27f85783e631a0.js",
-      "static/chunks/05d954cf.157e5d25c988e275683f.js",
-      "static/chunks/0c428ae2.be5546622948742a8b05.js",
-      "static/chunks/d64684d8.9523ededafc8d16cd793.js",
-      "static/chunks/95b64a6e.ddb68751d13d26329255.js",
-      "static/chunks/pages/index-4462898e5c3bafd03911.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
     ],
     "/_app": [
-      "static/chunks/webpack-a99eb8ca73460c4decfc.js",
-      "static/chunks/framework.57a22ac5870571c2eff5.js",
-      "static/chunks/commons.23803713b93df69f8c70.js",
-      "static/chunks/main-2dc3ca27f85783e631a0.js",
-      "static/css/a41ad85f007def8f187a.css",
-      "static/chunks/pages/_app-d67091090ba33af15032.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_app.js"
     ],
     "/_error": [
-      "static/chunks/webpack-a99eb8ca73460c4decfc.js",
-      "static/chunks/framework.57a22ac5870571c2eff5.js",
-      "static/chunks/commons.23803713b93df69f8c70.js",
-      "static/chunks/main-2dc3ca27f85783e631a0.js",
-      "static/chunks/pages/_error-4f0f98809e0bb30a5870.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_error.js"
     ]
   },
   "ampFirstPages": []

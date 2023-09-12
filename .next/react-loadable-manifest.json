@@ -1,8 +1,14 @@
 {
-  "../sections/testimonials.js -> components/cards/testimonial": {
-    "id": "CWAR",
+  "../../node_modules/next/dist/client/next-dev.js -> ./dev/noop": {
+    "id": "./node_modules/next/dist/client/dev/noop.js",
     "files": [
-      "static/chunks/12.e8b76193874b951d41f0.js"
+      "static/chunks/0.js"
+    ]
+  },
+  "../sections/testimonials.js -> components/cards/testimonial": {
+    "id": "./src/components/cards/testimonial.js",
+    "files": [
+      "static/chunks/1.js"
     ]
   }
 }
