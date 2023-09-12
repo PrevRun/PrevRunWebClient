@@ -36,6 +36,9 @@ jobs:
 
       - name: Build Next.js app
         run: npm run build
+
+      - name: Export static asset
+        run: npm run export
       # Deploy to the S3 server
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
