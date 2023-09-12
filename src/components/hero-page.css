@@ -1,0 +1,105 @@
+.simplify-video-workflows {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-size: inherit;
+  letter-spacing: -3px;
+  line-height: 80px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  width: 644px;
+}
+.effortless-process {
+  margin-block-start: 0;
+  margin-block-end: 1px;
+}
+.lorem-ipsum-dolor-container {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  font-size: 18px;
+  line-height: 42px;
+  display: inline-block;
+  width: 490px;
+  height: 116px;
+}
+.text {
+  position: absolute;
+  top: 6.62px;
+  left: 0;
+  width: 649px;
+  height: 366px;
+}
+.lorem-ipsum-dolor1 {
+  position: relative;
+  line-height: 40px;
+  opacity: 0.4;
+}
+.feild {
+  position: absolute;
+  top: 422.62px;
+  left: 2px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 16px 40px rgba(72, 59, 26, 0.08);
+  width: 350px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 16px;
+}
+.lorem-ipsum-dolor2 {
+  position: relative;
+  font-size: 18px;
+  line-height: 40px;
+  font-family: "DM Sans";
+  color: #fff;
+  text-align: center;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #ffc059;
+  position: absolute;
+  top: 422.62px;
+  left: 367px;
+  border-radius: 5px;
+  width: 163px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.frame,
+.illustration-icon {
+  position: absolute;
+  overflow: hidden;
+}
+.illustration-icon {
+  height: 87.81%;
+  width: 53.43%;
+  top: 0;
+  right: 0;
+  bottom: 12.19%;
+  left: 46.57%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.frame {
+  top: 206.38px;
+  left: 308px;
+  width: 1377.61px;
+  height: 482.62px;
+  text-align: left;
+  font-size: 64px;
+  color: #02073e;
+  font-family: "DM Sans";
+}
