@@ -31,15 +31,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Install packages
-      - name: Install packages
-        run: |
-          yarn install
-      # Build an optimized production build
-      - name: Production build
-        run: |
-          unset CI
-          yarn build
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build Next.js app
+        run: yarn build
       # Deploy to the S3 server
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
