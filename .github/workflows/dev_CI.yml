@@ -32,11 +32,11 @@ jobs:
 
       - name: Set Environment Variable for Development Branch
         if: github.ref == 'refs/heads/development'
-        run: echo "BUCKET=development-value" >> 'dev-prevrun.com'
+        run: echo "BUCKET=dev-prevrun.com" >> $GITHUB_ENV
 
       - name: Set Environment Variable for Main Branch
         if: github.ref == 'refs/heads/main'
-        run: echo "BUCKET=main-value" >> 'prevrun.com'
+        run: echo "BUCKET=prevrun.com" >> $GITHUB_ENV
 
       - name: Show Environment Variable Value
         run: echo $BUCKET
