@@ -1,5 +1,5 @@
 {
-  "name": "@landing/015-next",
+  "name": "prevrun",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@next/font": "^13.4.19",
     "framer-motion": "^2.9.5",
     "next": "^10.0.3",
     "next-compose-plugins": "^2.2.1",
