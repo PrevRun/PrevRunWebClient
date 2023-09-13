@@ -41,4 +41,5 @@ jobs:
 
       - name: Build Next.js app
         run: npm run build
-      
+      - name: Export static asset
+        run: npm run export
