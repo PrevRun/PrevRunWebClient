@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Router from 'next/router';
-import '../pages/globals.css'
+import '../pages/global.module.css'
 // import { initGA, logPageView } from 'analytics';
 import 'rc-drawer/assets/index.css';
 import 'rc-tabs/assets/index.css';
