@@ -38,7 +38,7 @@ jobs:
       - name: NODE_OPTION
         run: export NODE_OPTIONS=--openssl-legacy-provider
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Build Next.js app
         run: npm run build
