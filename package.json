@@ -12,7 +12,7 @@
   "dependencies": {
     "@next/font": "^13.4.19",
     "framer-motion": "^2.9.5",
-    "next": "^10.0.3",
+    "next": "^13.0.3",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
     "polished": "^4.0.5",
