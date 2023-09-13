@@ -35,7 +35,8 @@ jobs:
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
+      - name: NODE_OPTION
+        run: export NODE_OPTIONS=--openssl-legacy-provider
       - name: Install dependencies
         run: npm install
 
