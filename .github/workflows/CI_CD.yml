@@ -34,7 +34,7 @@ jobs:
 
       - name: Set Environment Variable for Main Branch
         if: github.ref == 'refs/heads/main'
-        run: echo "BUCKET=www.prevrun.net" >> $GITHUB_ENV
+        run: echo "BUCKET=prevrun.net" >> $GITHUB_ENV
 
       - name: Show Environment Variable Value
         run: echo $BUCKET
