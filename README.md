@@ -1,2 +1,3 @@
 # PrevRun
-[Live website URL hosted on S3](http://prevrun.com.s3-website-us-east-1.amazonaws.com/)
+[PROD SITE](www.prevrun.net)
+[DEVELOPMENT SITE](http://dev-prevrun.com.s3-website.us-east-2.amazonaws.com/)
