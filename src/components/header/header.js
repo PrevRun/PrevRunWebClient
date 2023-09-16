@@ -62,7 +62,7 @@ export default function Header() {
                     Login
                   </button>
                   <Button variant="text" sx={styles.getStarted}>
-                    Get Started
+                    Subscribe
                   </Button>
                 </Flex>
                 <NavbarDrawer />

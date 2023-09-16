@@ -5,10 +5,6 @@ export default [
     label: 'Home',
   },
   {
-    path: 'support',
-    label: 'Support',
-  },
-  {
     path: 'features',
     label: 'Feature',
   },
