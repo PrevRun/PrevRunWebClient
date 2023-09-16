@@ -58,7 +58,7 @@ export default function Header() {
                 </Flex>
                 <Flex sx={styles.buttonGroup}>
                   <Button variant="text" sx={styles.getStarted}>
-                    Subscribe
+                    Get Early Access
                   </Button>
                 </Flex>
                 <NavbarDrawer />

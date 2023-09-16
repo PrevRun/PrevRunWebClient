@@ -19,7 +19,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
         id={`email-${id}`}
         placeholder="Enter Email address"
       />
-      <Button>{buttonLabel ?? 'Subscribe'}</Button>
+      <Button>{buttonLabel ?? 'Get Early Access'}</Button>
     </Flex>
   );
 };

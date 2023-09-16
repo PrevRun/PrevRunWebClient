@@ -1,35 +1,35 @@
 /** @jsx jsx */
-import { jsx, Box, Grid, Flex, Container, Image, Text } from 'theme-ui';
-import SectionHeading from 'components/section-heading';
-import { LearnMore } from 'components/link';
-import app from 'assets/images/app.png';
-import emoji from 'assets/images/icons/emoji.png';
-import check from 'assets/images/icons/check-circle.png';
+import { jsx, Box, Grid, Flex, Container, Image, Text } from "theme-ui";
+import SectionHeading from "components/section-heading";
+import { LearnMore } from "components/link";
+import app from "assets/images/app.png";
+import emoji from "assets/images/icons/emoji.png";
+import check from "assets/images/icons/check-circle.png";
 
 const data = [
   {
     id: 1,
-    label: 'Medical and vision',
+    label: "One Click Upload",
   },
   {
     id: 2,
-    label: 'Life insurance',
+    label: "One Click Approval",
   },
   {
     id: 3,
-    label: '400(k) savings',
+    label: "Easy Revision Process",
   },
   {
     id: 4,
-    label: 'HSAs and FSAs',
+    label: "No YouTube key Stored",
   },
   {
     id: 5,
-    label: 'Commuter benefits',
+    label: "Zero Hidden Charges",
   },
   {
     id: 6,
-    label: '529 college savings',
+    label: "Saves Network Bandwidth",
   },
 ];
 
@@ -40,20 +40,21 @@ const AppFeature = () => {
         <Grid sx={styles.grid}>
           <Box sx={styles.rightContent}>
             <SectionHeading
-              emoji={emoji}
+              // emoji={emoji}
               sx={styles.heading}
-              title="Built in one app to make instant reply with in lowest minutes"
-              description="Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever."
+              title="Effortlessly share your content with a single click for lightning-fast uploads!"
+              description="
+              Say goodbye to the repetitive chore of downloading and uploading your videos! With Prevrun, a single click effortlessly sends your content soaring, whether you're on the move or catching a flight. Your time is valuable; let us streamline your workflow!"
             />
             <Box sx={styles.features}>
               {data?.map(({ id, label }) => (
-                <Flex key={id} as="span" sx={{ alignItems: 'flex-start' }}>
+                <Flex key={id} as="span" sx={{ alignItems: "flex-start" }}>
                   <Image src={check} alt="check icon" />
                   <Text as="span">{label}</Text>
                 </Flex>
               ))}
             </Box>
-            <LearnMore label="Explore more" path="#!" />
+            {/* <LearnMore label="Explore more" path="#!" /> */}
           </Box>
           <Box sx={styles.illustration}>
             <Image src={app} alt="workHard" />
@@ -73,27 +74,27 @@ const styles = {
   },
   grid: {
     gap: [0, 0, 0, 0, 10, 30],
-    display: ['flex', null, null, null, 'grid'],
-    flexDirection: ['column-reverse', null, null, 'column', 'row'],
-    gridTemplateColumns: ['0.9fr 1.1fr'],
-    alignItems: 'center',
+    display: ["flex", null, null, null, "grid"],
+    flexDirection: ["column-reverse", null, null, "column", "row"],
+    gridTemplateColumns: ["0.9fr 1.1fr"],
+    alignItems: "center",
   },
   heading: {
-    maxWidth: ['auto', null, null, '495px', 'auto'],
-    textAlign: ['center', null, null, null, 'left'],
-    mb: ['20px'],
+    maxWidth: ["auto", null, null, "495px", "auto"],
+    textAlign: ["center", null, null, null, "left"],
+    mb: ["20px"],
     ml: [0],
     h2: {
-      color: 'heading',
-      fontSize: ['24px', null, null, '36px', '31px', 10, 40],
+      color: "heading",
+      fontSize: ["24px", null, null, "36px", "31px", 10, 40],
       lineHeight: [1.33, 1.33, 1.26, null, 1.5, 1.26],
-      letterSpacing: '-1px',
-      letterSpacing: '-1px',
+      letterSpacing: "-1px",
+      letterSpacing: "-1px",
     },
     img: {
-      maxWidth: [24, null, null, 30, 25, null, '100%'],
-      top: ['4px', '8px', null, null, '4px', '8px'],
-      '@media screen and (min-width: 1441px) and (max-width:1600px)': {
+      maxWidth: [24, null, null, 30, 25, null, "100%"],
+      top: ["4px", "8px", null, null, "4px", "8px"],
+      "@media screen and (min-width: 1441px) and (max-width:1600px)": {
         maxWidth: 35,
       },
     },
@@ -104,27 +105,27 @@ const styles = {
   features: {
     columnCount: [1, 2],
     lineHeight: 2.81,
-    ml: ['20px', 0],
+    ml: ["20px", 0],
     mt: [null, null, null, 6, 0],
     img: {
-      mr: '10px',
-      mt: '11px',
+      mr: "10px",
+      mt: "11px",
     },
-    '+ a': {
-      mt: '25px',
-      ml: ['20px', 0],
+    "+ a": {
+      mt: "25px",
+      ml: ["20px", 0],
     },
   },
   illustration: {
-    mb: [0, null, null, null, '-150px', '-260px'],
+    mb: [0, null, null, null, "-150px", "-260px"],
     mt: [0],
-    zIndex: '-1',
+    zIndex: "-1",
     img: {
-      display: ['none', null, null, null, 'block'],
+      display: ["none", null, null, null, "block"],
     },
-    '@media screen and (max-width: 767px)': {
+    "@media screen and (max-width: 767px)": {
       background: `transparent url(${app}) no-repeat center top / cover`,
-      width: '100%',
+      width: "100%",
       minHeight: 310,
       marginBottom: 40,
     },
