@@ -18,7 +18,7 @@ const data = [
     tabPane: [
       {
         icon: <Currency />,
-        title: 'Budget Overview',
+        title: 'Budget Friendly',
       },
     ],
     tabContent: [
@@ -34,8 +34,8 @@ const data = [
     id: 2,
     tabPane: [
       {
-        icon: <Cog />,
-        title: 'Create & adjust',
+        icon: <BarChart />,
+        title: 'Optimize workflow',
       },
     ],
     tabContent: [
@@ -51,8 +51,8 @@ const data = [
     id: 3,
     tabPane: [
       {
-        icon: <PieChart />,
-        title: 'View Reports',
+        icon: <Suitcase />,
+        title: 'Upload videos haslefree',
       },
     ],
     tabContent: [
@@ -64,29 +64,13 @@ const data = [
       },
     ],
   },
+  
   {
     id: 4,
     tabPane: [
       {
-        icon: <Suitcase />,
-        title: 'Optimize website',
-      },
-    ],
-    tabContent: [
-      {
-        image: dashboard,
-        title: `Fourth quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
-        readMore: '#introduce-quality',
-      },
-    ],
-  },
-  {
-    id: 5,
-    tabPane: [
-      {
-        icon: <BarChart />,
-        title: 'Custom Dashboard',
+        icon: <Cog />,
+        title: 'Safety first',
       },
     ],
     tabContent: [
