@@ -1,10 +1,11 @@
-/** @jsx jsx */
 import { jsx, Box, Container, Grid } from "theme-ui";
+import { motion } from "framer-motion";
 import SectionHeading from "components/section-heading";
 import Accordion from "components/accordion/accordion";
 import Image from "components/image";
 import messenger from "assets/images/messenger.png";
-import emoji from "assets/images/icons/emoji-2.png";
+import { useInView } from 'react-intersection-observer'; // Import useInView
+
 
 const data = [
   {
@@ -39,26 +40,65 @@ const data = [
   },
 ];
 
+
+const slideInFromRight = {
+  hidden: { opacity: 0, x: "100%" },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fade = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const slideInFromLeft = {
+  hidden: { opacity: 0, x: "-100%" },
+  visible: { opacity: 1, x: 0 },
+};
+
 const PremiumFeature = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <section id="features" sx={styles.section}>
       <Container>
         <Grid sx={styles.grid}>
-        <Box as="figure" sx={styles.illustration}>
+          <motion.div
+            ref={ref}
+            variants={slideInFromLeft}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"} // Updated animation condition
+            transition={{ duration: 0.6, delay: 0.2 }}
+            sx={styles.illustration}
+          >
             <Image src={messenger} alt="messenger" sx={{ borderRadius: '10px' }} />
-</Box>
+          </motion.div>
 
           <Box sx={styles.rightContent}>
-            <SectionHeading
-              sx={styles.heading}
-              title="At PrevRun, we're passionate about
-              revolutionizing the way content 
-              creators and editors work together"
-              description="To make video collaboration effortless, efficient, and enjoyable for everyone."
-            />
-            <Box sx={styles.accordionGroup}>
-              <Accordion items={data} />
-            </Box>
+            <motion.div
+              variants={slideInFromRight}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"} // Updated animation condition
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <SectionHeading
+                sx={styles.heading}
+                title="At PrevRun, we're passionate about revolutionizing the way content creators and editors work together"
+                description="To make video collaboration effortless, efficient, and enjoyable for everyone."
+              />
+            </motion.div>
+            <motion.div
+              variants={fade}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"} // Updated animation condition
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Box sx={styles.accordionGroup}>
+                <Accordion items={data} />
+              </Box>
+            </motion.div>
           </Box>
         </Grid>
       </Container>

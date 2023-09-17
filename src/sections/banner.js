@@ -1,6 +1,7 @@
-/** @jsx jsx */
 import { jsx, Box, Flex, Container, Heading, Text } from "theme-ui";
-import { rgba } from "polished";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react"; // Import useEffect and useState
+
 import Image from "components/image";
 import SubscriptionForm from "components/subscription-form";
 import illustration from "assets/images/banner.png";
@@ -24,20 +25,45 @@ const logos = [
 ];
 
 const Banner = () => {
+  // Use useState to track animation trigger
+  const [animate, setAnimate] = useState(false);
+
+  // Use useEffect to trigger animations on component mount
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
   return (
     <Box as="section" id="home" sx={styles.section}>
       <Container>
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
-            <Heading as="h1">Simplify Video workflows with PrevRun</Heading>
-            <Text as="p">
-            Effortless Process, Instant Video Uploads, Seamless Collaboration: Elevate Your Creative Journey!
-            </Text>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={animate ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <Heading as="h1">Simplify Video workflows with PrevRun</Heading>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={animate ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <Text as="p">
+                Effortless Process, Instant Video Uploads, Seamless Collaboration: Elevate Your Creative Journey!
+              </Text>
+            </motion.div>
             <SubscriptionForm sx={styles.subscriptionForm} />
-            
           </Box>
           <Flex as="figure" sx={styles.bannerImage}>
-            <Image src={illustration} alt="illustration" />
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={animate ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Image src={illustration} alt="illustration" />
+            </motion.div>
           </Flex>
         </Box>
       </Container>
@@ -101,10 +127,6 @@ const styles = {
       boxShadow: "0px 16px 40px rgba(72, 59, 26, 0.08)",
       minHeight: [40, 50, null, null, null, 60],
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      "::placeholder": {
-        color: rgba("#02073E", 0.4),
-        opacity: 1 /* Firefox */,
-      },
     },
     button: {
       fontSize: [0, 1, null, null, 2],
@@ -119,7 +141,6 @@ const styles = {
     span: {
       fontSize: ["13px", null, null, null, 2],
       lineHeight: 2.62,
-      color: rgba("#566272", 0.6),
     },
   },
   sponsor: {
