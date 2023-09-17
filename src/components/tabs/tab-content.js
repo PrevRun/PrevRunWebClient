@@ -7,7 +7,7 @@ const TabContent = ({ tabContent }) => {
       <Box sx={styles.content}>
         <Heading>{item.title}</Heading>
         <Text as="p">{item.description}</Text>
-        <Button>Get Early Access</Button>
+        <Button onClick={() => window.location.href = 'https://prevrun.net'}>Go To Console</Button>
       </Box>
       <Box
         sx={{ backgroundImage: `url(${item?.image})`, ...styles.illustration }}
@@ -48,10 +48,11 @@ const styles = {
     alignItems: 'flex-start',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    borderRadius: [5, null, null, 0],
+    borderRadius: '10px', // Add this line for border radius
     display: 'flex',
     minHeight: [256, null, null, 538, 470, 510, 633],
     mb: [5, null, null, null, 0],
     width: '100%',
   },
+
 };

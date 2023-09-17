@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Grid, Flex, Container, Image, Text } from "theme-ui";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 import SectionHeading from "components/section-heading";
 import { LearnMore } from "components/link";
 import app from "assets/images/app.png";
@@ -9,27 +10,27 @@ import check from "assets/images/icons/check-circle.png";
 const data = [
   {
     id: 1,
-    label: "Medical and vision",
+    label: "One Click Upload",
   },
   {
     id: 2,
-    label: "Life insurance",
+    label: "One Click Approval",
   },
   {
     id: 3,
-    label: "400(k) savings",
+    label: "Easy Revision Process",
   },
   {
     id: 4,
-    label: "HSAs and FSAs",
+    label: "No YouTube key Stored",
   },
   {
     id: 5,
-    label: "Commuter benefits",
+    label: "Saves Network Bandwidth",
   },
   {
     id: 6,
-    label: "529 college savings",
+    label: "Zero Hidden Charges",
   },
 ];
 
@@ -39,22 +40,42 @@ const AppFeature = () => {
       <Container>
         <Grid sx={styles.grid}>
           <Box sx={styles.rightContent}>
-            <SectionHeading
-              sx={styles.heading}
-              title="Built in one app to make instant reply with in lowest minutes"
-              description="Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever."
-            />
+            <motion.div // Wrap the component with motion.div
+              initial={{ opacity: 0, y: 20 }} // Set initial properties
+              animate={{ opacity: 1, y: 0 }} // Set animate properties
+              transition={{ duration: 0.5 }} // Set transition duration
+            >
+              <SectionHeading
+                sx={styles.heading}
+                title="Upload content in seconds with one click."
+                description="Tired of the hassle of downloading and uploading your videos repeatedly? With Prevrun, you can click a button and seamlessly upload your content, even when you're on the go or boarding a flight. Your time is precious; let us simplify your workflow!"
+              />
+            </motion.div>
             <Box sx={styles.features}>
-              {data?.map(({ id, label }) => (
-                <Flex key={id} as="span" sx={{ alignItems: "flex-start" }}>
+              {data?.map(({ id, label }, index) => (
+                <motion.div // Wrap the component with motion.div
+                  key={id}
+                  as="span"
+                  sx={{ alignItems: "flex-start" }}
+                  initial={{ opacity: 0 }} // Set initial properties
+                  animate={{ opacity: 1 }} // Set animate properties
+                  transition={{ duration: 0.2 * index }} // Set transition duration
+                >
                   <Image src={check} alt="check icon" />
                   <Text as="span">{label}</Text>
-                </Flex>
+                </motion.div>
               ))}
             </Box>
           </Box>
+
           <Box sx={styles.illustration}>
-            <Image src={app} alt="workHard" sx={{ borderRadius: "10px" }} />
+            <motion.div
+              initial={{ x: "30%" }} // Initially, position the image outside the viewport on the right
+              animate={{ x: 0 }} // Animate the image to slide in from the right
+              transition={{ duration: 0.6 }} // Set the duration of the animation
+            >
+              <Image src={app} alt="workHard" sx={{ borderRadius: "10px" }} />
+            </motion.div>
           </Box>
         </Grid>
       </Container>
@@ -67,7 +88,7 @@ export default AppFeature;
 const styles = {
   section: {
     pt: [6, null, null, 9, 7, 4, 9],
-    mb: [8, null, null, 11,10],
+    mb: [8, null, null, 11, 10],
   },
   grid: {
     gap: [0, 0, 0, 0, 10, 30],
