@@ -9,27 +9,27 @@ import check from "assets/images/icons/check-circle.png";
 const data = [
   {
     id: 1,
-    label: "One Click Upload",
+    label: "Medical and vision",
   },
   {
     id: 2,
-    label: "One Click Approval",
+    label: "Life insurance",
   },
   {
     id: 3,
-    label: "Easy Revision Process",
+    label: "400(k) savings",
   },
   {
     id: 4,
-    label: "No YouTube key Stored",
+    label: "HSAs and FSAs",
   },
   {
     id: 5,
-    label: "Zero Hidden Charges",
+    label: "Commuter benefits",
   },
   {
     id: 6,
-    label: "Saves Network Bandwidth",
+    label: "529 college savings",
   },
 ];
 
@@ -40,11 +40,9 @@ const AppFeature = () => {
         <Grid sx={styles.grid}>
           <Box sx={styles.rightContent}>
             <SectionHeading
-              // emoji={emoji}
               sx={styles.heading}
-              title="Effortlessly share your content with a single click for lightning-fast uploads!"
-              description="
-              Say goodbye to the repetitive chore of downloading and uploading your videos! With Prevrun, a single click effortlessly sends your content soaring, whether you're on the move or catching a flight. Your time is valuable; let us streamline your workflow!"
+              title="Built in one app to make instant reply with in lowest minutes"
+              description="Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever."
             />
             <Box sx={styles.features}>
               {data?.map(({ id, label }) => (
@@ -54,10 +52,9 @@ const AppFeature = () => {
                 </Flex>
               ))}
             </Box>
-            {/* <LearnMore label="Explore more" path="#!" /> */}
           </Box>
           <Box sx={styles.illustration}>
-            <Image src={app} alt="workHard" />
+            <Image src={app} alt="workHard" sx={{ borderRadius: "10px" }} />
           </Box>
         </Grid>
       </Container>
@@ -70,7 +67,7 @@ export default AppFeature;
 const styles = {
   section: {
     pt: [6, null, null, 9, 7, 4, 9],
-    pb: [8, null, null, 11, 0],
+    mb: [8, null, null, 11,10],
   },
   grid: {
     gap: [0, 0, 0, 0, 10, 30],
@@ -86,17 +83,10 @@ const styles = {
     ml: [0],
     h2: {
       color: "heading",
-      fontSize: ["24px", null, null, "36px", "31px", 10, 40],
+      fontSize: ["24px", null, null, "36px", "31px", 10, 35],
       lineHeight: [1.33, 1.33, 1.26, null, 1.5, 1.26],
       letterSpacing: "-1px",
       letterSpacing: "-1px",
-    },
-    img: {
-      maxWidth: [24, null, null, 30, 25, null, "100%"],
-      top: ["4px", "8px", null, null, "4px", "8px"],
-      "@media screen and (min-width: 1441px) and (max-width:1600px)": {
-        maxWidth: 35,
-      },
     },
     p: {
       maxWidth: 430,
@@ -117,17 +107,6 @@ const styles = {
     },
   },
   illustration: {
-    mb: [0, null, null, null, "-150px", "-260px"],
-    mt: [0],
-    zIndex: "-1",
-    img: {
-      display: ["none", null, null, null, "block"],
-    },
-    "@media screen and (max-width: 767px)": {
-      background: `transparent url(${app}) no-repeat center top / cover`,
-      width: "100%",
-      minHeight: 310,
-      marginBottom: 40,
-    },
+    mb: [3, null, null, 8, 0],
   },
 };

@@ -9,7 +9,7 @@ import Currency from 'components/icons/currency';
 import LockIcon from 'components/icons/cog';
 import Suitcase from 'components/icons/suitcase';
 import BarChart from 'components/icons/bar-chart';
-import dashboard from 'assets/images/dashboard.png';
+import dashboard from 'assets/images/app.png';
 
 const data = [
   {
@@ -23,8 +23,8 @@ const data = [
     tabContent: [
       {
         image: dashboard,
-        title: `First quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        title: `Save on your Network Bandwidth`,
+        description: `Save on your Network Bandwidth with our efficient video collaboration platform. Say goodbye to heavy downloads and enjoy seamless video reviews and approvals. Let's make the most of your bandwidth together!`,
         readMore: '#introduce-quality',
       },
     ],
@@ -40,8 +40,8 @@ const data = [
     tabContent: [
       {
         image: dashboard,
-        title: `Second quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        title: `Optimize your creator workflow`,
+        description: `Optimize Workflow with Prevrun. Our platform simplifies video collaboration, making your content creation process more efficient than ever. Say hello to streamlined editing, approvals, and instant uploads. Elevate your workflow with Prevrun today!`,
         readMore: '#introduce-quality',
       },
     ],
@@ -57,8 +57,8 @@ const data = [
     tabContent: [
       {
         image: dashboard,
-        title: `Third quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        title: `Upload your videos from anywhere`,
+        description: `Video uploading shouldn't mean waiting and staring at the screen. With Prevrun, simply approve your video, click upload, shut down your laptop, and the next time you open it, your video could have racked up millions of views. It's like magic for your content!`,
         readMore: '#introduce-quality',
       },
     ],
@@ -75,8 +75,8 @@ const data = [
     tabContent: [
       {
         image: dashboard,
-        title: `Fifth quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        title: `Ultra Fast Ultra Safe`,
+        description: `No need for YouTube keys or any other credentials—PrevRun is as secure as it gets. We use OAuth 2.0 to ensure your safety while you focus on creating amazing content. Your security is our priority.`,
         readMore: '#introduce-quality',
       },
     ],
