@@ -44,12 +44,12 @@ const PremiumFeature = () => {
     <section id="features" sx={styles.section}>
       <Container>
         <Grid sx={styles.grid}>
-          <Box as="figure" sx={styles.illustration}>
-            {/* <Image src={messenger} alt="messenger" /> */}
-          </Box>
+        <Box as="figure" sx={styles.illustration}>
+            <Image src={messenger} alt="messenger" sx={{ borderRadius: '10px' }} />
+</Box>
+
           <Box sx={styles.rightContent}>
             <SectionHeading
-              emoji={emoji}
               sx={styles.heading}
               title="At PrevRun, we're passionate about
               revolutionizing the way content 
@@ -87,10 +87,10 @@ const styles = {
   },
   heading: {
     textAlign: ["left", null, null, "center", "left"],
-    ml: [null, null, null, "auto"],
+    ml: [null, null, null, "10"],
     maxWidth: [null, null, null, 520, 660],
     h2: {
-      fontSize: [null, null, null, 10, 8, 10, 40],
+      fontSize: [null, null, null, 10, 8, 10, 30],
       img: {
         maxWidth: [24, null, null, 30, 25, null, "100%"],
         top: ["4px", "8px", null, null, "4px", "8px"],
@@ -101,10 +101,10 @@ const styles = {
     },
   },
   illustration: {
-    mb: [-6, null, null, -8, 0],
+    mb: [3, null, null, 8, 0],
   },
   accordionGroup: {
-    m: [null, null, null, "0 auto", "unset"],
+    m: [null, null, null, "10"],
     maxWidth: [null, null, null, 600, "none"],
   },
 };

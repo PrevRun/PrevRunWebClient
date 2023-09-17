@@ -7,7 +7,7 @@ const TabContent = ({ tabContent }) => {
       <Box sx={styles.content}>
         <Heading>{item.title}</Heading>
         <Text as="p">{item.description}</Text>
-        <Button>More Details</Button>
+        <Button>Get Early Access</Button>
       </Box>
       <Box
         sx={{ backgroundImage: `url(${item?.image})`, ...styles.illustration }}

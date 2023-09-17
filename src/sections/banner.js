@@ -31,7 +31,7 @@ const Banner = () => {
           <Box sx={styles.bannerContent}>
             <Heading as="h1">Simplify Video workflows with PrevRun</Heading>
             <Text as="p">
-            Effortless Process | Instant Video Uploads | Smooth Collaboration
+            Effortless Process, Instant Video Uploads, Seamless Collaboration: Elevate Your Creative Journey!
             </Text>
             <SubscriptionForm sx={styles.subscriptionForm} />
             
