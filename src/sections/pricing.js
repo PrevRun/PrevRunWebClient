@@ -1,89 +1,127 @@
 /** @jsx jsx */
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { keyframes } from '@emotion/core';
 import { jsx, Box, Grid, Container, Flex, Text, Button } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import PriceTable from 'components/cards/price-table';
 import Switch from 'components/switch';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 
 const data = [
   {
     id: 1,
     title: 'Startup Pack',
-    subtitle: 'For the startup team who work with new come data stack',
+    subtitle: 'For influencers who are just beginning and have modest storage needs',
     amount: {
       monthly: 25.99,
       annual: 25.99 * 12 - 10,
     },
     isRecommended: false,
-    buttonText: 'Start Free Trial',
+    buttonText: 'Subscribe',
     features: [
       {
         id: 1,
         isAvailable: true,
-        title: 'Ultimate access to all course, exercises and assessments',
+        title: 'Full access to all premium dashboard features',
       },
       {
         id: 2,
         isAvailable: true,
-        title: `Free access for all kind of exercise corrections with downloads.`,
+        title: 'One-click uploads for seamless content sharing',
       },
       {
         id: 3,
         isAvailable: true,
-        title: `Total assessment corrections with free download access system`,
+        title: 'Expandable with up to 2 workspaces for superior video organization',
       },
       {
         id: 4,
-        isAvailable: false,
-        title: `Unlimited download of courses on the mobile app contents`,
+        isAvailable: true,
+        title: 'A generous 50 GB of usable storage space',
       },
       {
         id: 5,
         isAvailable: false,
-        title: `Download and print courses and exercises in PDF`,
+        title: 'Advanced Collaboration Tools'
       },
-    ],
+      {
+        id: 6,
+        isAvailable: false,
+        title: 'Priority support for prompt assistance',
+      },
+    ]
+    
   },
   {
     id: 2,
     title: 'Premium Pack',
-    subtitle: 'For the Pro users who work with modern data stack',
+    subtitle: 'For Pro users who simply dont have the time to worry about deleting files.',
     amount: {
       monthly: 49.99,
       annual: 49.99 * 12 - 10,
     },
     isRecommended: true,
-    buttonText: 'Start Free Trial',
+    buttonText: 'Subscribe',
     features: [
       {
         id: 1,
         isAvailable: true,
-        title: 'Ultimate access to all course, exercises and assessments',
+        title: 'Full access to every feature available on the dashboard.',
       },
       {
         id: 2,
         isAvailable: true,
-        title: `Free access for all kind of exercise corrections with downloads.`,
+        title: 'one-click uploads for seamless content sharing',
       },
       {
         id: 3,
         isAvailable: true,
-        title: `Total assessment corrections with free download access system`,
+        title: 'Elevate your video organization with the option to add up to 10 workspaces!',
       },
       {
         id: 4,
         isAvailable: true,
-        title: `Unlimited download of courses on the mobile app contents`,
+        title: 'Enjoy a generous 500 GB of usable storage space!',
       },
       {
         id: 5,
         isAvailable: true,
-        title: `Download and print courses and exercises in PDF`,
+        title: 'Advanced Collaboration Tools',
+      },
+      {
+        id: 6,
+        isAvailable: true,
+        title: 'Priority support for prompt assistance',
       },
     ],
   },
 ];
+
+const PriceTableWithMotion = ({ price, isAnnual }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // If element is in view, trigger animation here
+    }
+  }, [inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 0.7 }}
+      className="priceCard"
+    >
+      <PriceTable price={price} isAnnual={isAnnual} />
+    </motion.div>
+  );
+};
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -107,7 +145,7 @@ const Pricing = () => {
         </Flex>
         <Box sx={styles.priceWrapper}>
           {data?.map((price, index) => (
-            <PriceTable
+            <PriceTableWithMotion
               price={price}
               isAnnual={!isMonthly}
               key={`${isMonthly}-${index}`}
@@ -126,16 +164,6 @@ const fadeIn = keyframes`
     opacity: 0;
   }
   to {
-    opacity: 1;
-  }
-`;
-const fadeIn2 = keyframes`
-  from {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
     opacity: 1;
   }
 `;
@@ -187,13 +215,13 @@ const styles = {
         animation: `${fadeIn} 0.8s linear`,
       },
       'ul > li': {
-        animation: `${fadeIn2} 0.7s linear`,
-      },
-      '.priceAmount': {
         animation: `${fadeIn} 0.9s linear`,
       },
+      '.priceAmount': {
+        animation: `${fadeIn} 1s linear`,
+      },
       '.priceButton': {
-        animation: `${fadeIn2} 0.7s linear`,
+        animation: `${fadeIn} 1.1s linear`,
       },
     },
   },

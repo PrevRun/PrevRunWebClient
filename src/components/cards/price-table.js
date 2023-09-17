@@ -1,14 +1,22 @@
 /** @jsx jsx */
-import { jsx, Box, Button, Heading, Text } from 'theme-ui';
-import { IoMdCheckmarkCircle } from 'react-icons/io';
-import { IoIosCloseCircle } from 'react-icons/io';
-import { rgba } from 'polished';
+import { jsx, Box, Button, Heading, Text } from "theme-ui";
+import { IoMdCheckmarkCircle } from "react-icons/io";
+import { IoIosCloseCircle } from "react-icons/io";
+import { rgba } from "polished";
 
 const PriceTable = ({ price, isAnnual }) => {
+
+  const handleClick = () => {
+    const element = document.getElementById('home');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Box
       sx={styles.priceTable}
-      className={`priceCard ${price.isRecommended ? 'recommended' : ''}`}
+      className={`priceCard ${price.isRecommended ? "recommended" : ""}`}
     >
       <Box sx={styles.header} className="priceHeader">
         <Heading as="h3" sx={styles.title}>
@@ -16,8 +24,8 @@ const PriceTable = ({ price, isAnnual }) => {
         </Heading>
         <Text as="p" sx={styles.priceAmount}>
           {isAnnual
-            ? price?.amount?.annual.toFixed(2)
-            : price?.amount?.monthly.toFixed(2)}
+            ? `$${price?.amount?.annual.toFixed(2)}`
+            : `$${price?.amount?.monthly.toFixed(2)}`}
           /mo
         </Text>
         <Text as="p" sx={styles.subtitle}>
@@ -26,10 +34,10 @@ const PriceTable = ({ price, isAnnual }) => {
       </Box>
       <Box as="ul" sx={styles.list}>
         {price?.features?.map((feat) => (
-          <li key={feat.id} className={!feat.isAvailable ? 'unavailable' : ''}>
+          <li key={feat.id} className={!feat.isAvailable ? "unavailable" : ""}>
             {feat.isAvailable ? (
               <span>
-                <IoMdCheckmarkCircle sx={{ color: 'primary' }} size="23px" />
+                <IoMdCheckmarkCircle sx={{ color: "primary" }} size="23px" />
               </span>
             ) : (
               <span>
@@ -41,7 +49,7 @@ const PriceTable = ({ price, isAnnual }) => {
         ))}
       </Box>
       <Box className="priceButton">
-        <Button sx={styles.button} variant="primaryMd">
+      <Button sx={styles.button} variant="primaryMd" onClick={handleClick}>
           {price.buttonText}
         </Button>
       </Box>
@@ -53,19 +61,19 @@ export default PriceTable;
 
 const styles = {
   priceTable: {
-    background: 'white',
+    background: "white",
     borderRadius: 10,
-    position: 'relative',
-    padding: ['40px 20px', null, null, null, '45px 50px 70px'],
-    '&.recommended': {
-      boxShadow: '0px 10px 60px rgba(62, 95, 119, 0.08)',
-      padding: ['55px 20px', null, null, null, '65px 60px 90px'],
+    position: "relative",
+    padding: ["40px 20px", null, null, null, "45px 50px 70px"],
+    "&.recommended": {
+      boxShadow: "0px 10px 60px rgba(62, 95, 119, 0.08)",
+      padding: ["55px 20px", null, null, null, "65px 60px 90px"],
       mt: [6, null, null, 0],
       button: {
-        backgroundColor: 'primary',
-        color: 'white',
-        ':hover': {
-          backgroundColor: 'secondary',
+        backgroundColor: "primary",
+        color: "white",
+        ":hover": {
+          backgroundColor: "secondary",
         },
       },
     },
@@ -78,55 +86,55 @@ const styles = {
     fontWeight: 700,
     fontSize: 5,
     lineHeight: 1.31,
-    letterSpacing: '-0.55px',
+    letterSpacing: "-0.55px",
   },
   priceAmount: {
-    color: 'primary',
+    color: "primary",
     fontWeight: 700,
-    fontSize: '26px',
+    fontSize: "26px",
     lineHeight: 1.39,
-    letterSpacing: 'heading',
+    letterSpacing: "heading",
     mt: [2],
   },
   subtitle: {
-    color: rgba('#343D48', 0.65),
+    color: rgba("#343D48", 0.65),
     lineHeight: 1.62,
     maxWidth: 290,
     mt: [4],
   },
   list: {
     borderBottom: `1px solid #E0E2E4`,
-    listStyle: 'none',
+    listStyle: "none",
     padding: 0,
     mt: [7],
     pb: [7],
     maxWidth: 340,
     li: {
-      display: 'flex',
-      alignItems: 'flex-start',
+      display: "flex",
+      alignItems: "flex-start",
       fontSize: 16,
       lineHeight: 1.62,
-      '+ li ': {
+      "+ li ": {
         mt: 30,
       },
-      'span:first-of-type': {
-        mr: '13px',
-        mt: '5px',
+      "span:first-of-type": {
+        mr: "13px",
+        mt: "5px",
       },
     },
-    '.unavailable': {
+    ".unavailable": {
       opacity: 0.5,
     },
   },
   button: {
-    backgroundColor: rgba('#FFC059', 0.1),
-    color: 'primary',
+    backgroundColor: rgba("#FFC059", 0.1),
+    color: "primary",
     minHeight: [50, null, null, null, 50],
     px: 25,
     mt: [7],
-    ':hover': {
-      backgroundColor: 'secondary',
-      color: 'white',
+    ":hover": {
+      backgroundColor: "secondary",
+      color: "white",
     },
   },
 };
