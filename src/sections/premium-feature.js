@@ -1,11 +1,11 @@
-import { jsx, Box, Container, Grid } from "theme-ui";
+import React from "react";
+import { Box, Container, Grid } from "theme-ui";
 import { motion } from "framer-motion";
 import SectionHeading from "components/section-heading";
 import Accordion from "components/accordion/accordion";
 import Image from "components/image";
 import messenger from "assets/images/messenger.png";
-import { useInView } from 'react-intersection-observer'; // Import useInView
-
+import { useInView } from 'react-intersection-observer';
 
 const data = [
   {
@@ -40,6 +40,10 @@ const data = [
   },
 ];
 
+const slideInFromLeft = {
+  hidden: { opacity: 0, x: "-100%" },
+  visible: { opacity: 1, x: 0 },
+};
 
 const slideInFromRight = {
   hidden: { opacity: 0, x: "100%" },
@@ -51,25 +55,20 @@ const fade = {
   visible: { opacity: 1 },
 };
 
-const slideInFromLeft = {
-  hidden: { opacity: 0, x: "-100%" },
-  visible: { opacity: 1, x: 0 },
-};
-
 const PremiumFeature = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  });
+  const [imageRef, imageInView] = useInView({ triggerOnce: true });
+  const [textRef, textInView] = useInView({ triggerOnce: true });
+  const [accordionRef, accordionInView] = useInView({ triggerOnce: true });
 
   return (
     <section id="features" sx={styles.section}>
       <Container>
         <Grid sx={styles.grid}>
           <motion.div
-            ref={ref}
+            ref={imageRef}
             variants={slideInFromLeft}
             initial="hidden"
-            animate={inView ? "visible" : "hidden"} // Updated animation condition
+            animate={imageInView ? "visible" : "hidden"}
             transition={{ duration: 0.6, delay: 0.2 }}
             sx={styles.illustration}
           >
@@ -78,9 +77,10 @@ const PremiumFeature = () => {
 
           <Box sx={styles.rightContent}>
             <motion.div
+              ref={textRef}
               variants={slideInFromRight}
               initial="hidden"
-              animate={inView ? "visible" : "hidden"} // Updated animation condition
+              animate={textInView ? "visible" : "hidden"}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <SectionHeading
@@ -90,9 +90,10 @@ const PremiumFeature = () => {
               />
             </motion.div>
             <motion.div
+              ref={accordionRef}
               variants={fade}
               initial="hidden"
-              animate={inView ? "visible" : "hidden"} // Updated animation condition
+              animate={accordionInView ? "visible" : "hidden"}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <Box sx={styles.accordionGroup}>
@@ -144,7 +145,8 @@ const styles = {
     mb: [3, null, null, 8, 0],
   },
   accordionGroup: {
-    m: [null, null, null, "10"],
+    m: [null, null, null, 10], // Added margin for mobile devices
     maxWidth: [null, null, null, 600, "none"],
   },
+  
 };
