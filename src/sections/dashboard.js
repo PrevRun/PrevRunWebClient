@@ -6,8 +6,7 @@ import Tabs, { TabPane } from 'rc-tabs';
 import TabTitle from 'components/tabs/tab-title';
 import TabContent from 'components/tabs/tab-content';
 import Currency from 'components/icons/currency';
-import Cog from 'components/icons/cog';
-import PieChart from 'components/icons/pie-chart';
+import LockIcon from 'components/icons/cog';
 import Suitcase from 'components/icons/suitcase';
 import BarChart from 'components/icons/bar-chart';
 import dashboard from 'assets/images/dashboard.png';
@@ -69,7 +68,7 @@ const data = [
     id: 4,
     tabPane: [
       {
-        icon: <Cog />,
+        icon: <LockIcon />,
         title: 'Safety first',
       },
     ],
