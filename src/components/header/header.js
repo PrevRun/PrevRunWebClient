@@ -110,9 +110,10 @@ const styles = {
   navbar: {
     display: ["none", null, null, null, "flex"],
     alignItems: "center",
-    flexGrow: 1,
-    // justifyContent: 'center',
+    // flexGrow: 1,
+    justifyContent: 'center',
     li: {
+      
       display: "flex",
       alignItems: "center",
       a: {
@@ -143,27 +144,9 @@ const styles = {
     minHeight: 45,
     ml: [6],
     display: ["none", null, null, null, "flex"],
+    marginLeft: 'auto'
   },
-  login: {
-    backgroundColor: "transparent",
-    position: ["absolute", null, null, null, "static"],
-    color: "text",
-    fontSize: [2],
-    fontWeight: 500,
-    top: "50%",
-    p: 0,
-    transform: ["translateY(-50%)", null, null, null, "none"],
-    right: 79,
-    border: 0,
-    fontFamily: "body",
-    display: "flex",
-    alignItems: "center",
-    outline: 0,
-    img: {
-      maxWidth: 14,
-      mr: 2,
-    },
-  },
+  // 
   menuButton: {
     position: "relative",
     right: "-6px",
