@@ -5,7 +5,11 @@ export default [
   },
   {
     path: 'features',
-    label: 'Feature',
+    label: 'Features',
+  },
+  {
+    path: 'services',
+    label: 'Services',
   },
   {
     path: 'pricing',

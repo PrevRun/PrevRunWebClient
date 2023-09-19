@@ -59,7 +59,10 @@ export default function Header() {
                 <Flex sx={styles.buttonGroup}>
                   <Button
                     variant="text"
-                    sx={styles.getStarted}
+                    sx={{
+                      ...styles.getStarted,
+                      marginLeft: "auto", // Add this line to move the button to the right
+                    }}
                     onClick={() => {
                       window.location.href = "http://prevrun.net";
                     }}
@@ -110,8 +113,8 @@ const styles = {
   navbar: {
     display: ["none", null, null, null, "flex"],
     alignItems: "center",
-    flexGrow: 1,
-    // justifyContent: 'center',
+    // flexGrow: 1,
+    justifyContent: "center",
     li: {
       display: "flex",
       alignItems: "center",
@@ -136,34 +139,21 @@ const styles = {
       color: "primary",
     },
   },
-  getStarted: {
-    backgroundColor: "#FFF0D7",
-    color: "#E6A740",
-    p: ["0 16px"],
-    minHeight: 45,
-    ml: [6],
-    display: ["none", null, null, null, "flex"],
-  },
-  login: {
-    backgroundColor: "transparent",
-    position: ["absolute", null, null, null, "static"],
-    color: "text",
-    fontSize: [2],
-    fontWeight: 500,
-    top: "50%",
-    p: 0,
-    transform: ["translateY(-50%)", null, null, null, "none"],
-    right: 79,
-    border: 0,
-    fontFamily: "body",
-    display: "flex",
-    alignItems: "center",
-    outline: 0,
-    img: {
-      maxWidth: 14,
-      mr: 2,
-    },
-  },
+//   buttonGroup: {
+//   position: 'absolute',
+//   right: '0',
+//   top: '50%',
+//   transform: 'translateY(-50%)',
+// },
+getStarted: {
+  backgroundColor: "#FFF0D7",
+  color: "#E6A740",
+  p: ["0 16px"],
+  minHeight: 45,
+},
+
+  
+  //
   menuButton: {
     position: "relative",
     right: "-6px",

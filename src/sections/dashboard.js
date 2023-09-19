@@ -100,7 +100,7 @@ const Dashboard = () => {
   }, [containerRef]);
 
   return (
-    <Box as="section" sx={styles.section}>
+    <Box as="section" id="services" sx={styles.section}>
       <Container ref={containerRef} />
       <Box sx={{ pl: containerOffset.left + 20, ...styles.container }}>
         <Tabs
