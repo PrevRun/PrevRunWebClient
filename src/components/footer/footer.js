@@ -4,29 +4,6 @@ import { rgba } from 'polished';
 import { Link } from 'components/link';
 import Logo from 'components/logo';
 
-const menuItems = [
-  {
-    path: '#home',
-    label: 'Home',
-  },
-  {
-    path: '#advertise',
-    label: 'Advertise',
-  },
-  {
-    path: '#supports',
-    label: 'Supports',
-  },
-  {
-    path: '#marketing',
-    label: 'Marketing',
-  },
-  {
-    path: '#faq',
-    label: 'FAQ',
-  },
-];
-
 export default function Footer() {
   return (
     <Box as="footer" sx={styles.footer}>
@@ -38,18 +15,12 @@ export default function Footer() {
               &copy; Copyright by {new Date().getFullYear()} PrevRun
             </Text>
           </Flex>
-          <Flex as="ul" sx={styles.footerNav}>
-            {menuItems?.map((item, index) => (
-              <li key={index}>
-                <Link path={item?.path}>{item?.label}</Link>
-              </li>
-            ))}
-          </Flex>
         </Flex>
       </Container>
     </Box>
   );
 }
+
 
 const styles = {
   footer: {
@@ -57,37 +28,18 @@ const styles = {
     pt: [6],
     pb: [6],
   },
-  footerInner: {
+  
+  footerInner: { // Add this to center the content horizontally
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    flexDirection: ['column', null, null, null, 'row'],
   },
+
   copyright: {
+    display: 'flex',
     alignItems: 'center',
-    flexDirection: ['column', null, null, null, 'row'],
     span: {
       color: rgba('white', 0.7),
-      fontSize: 1,
-      lineHeight: '18px',
-      ml: [null, null, null, null, 3],
-      mt: [3, null, null, null, 0],
-    },
-  },
-  footerNav: {
-    listStyle: 'none',
-    // flexDirection: ['column', null, null, null, 'row'],
-    m: ['25px 0 0', null, null, null, 0],
-    p: 0,
-    li: {
-      '+ li': {
-        ml: [3, null, null, null, 4],
-      },
-      a: {
-        color: 'white',
-        cursor: 'pointer',
-        textDecoration: 'none',
-        fontSize: [1, null, null, 2],
-      },
+      ml: [null, null, null, null, 3], // Adjust margin as needed
     },
   },
 };

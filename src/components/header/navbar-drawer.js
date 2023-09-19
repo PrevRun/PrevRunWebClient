@@ -58,7 +58,11 @@ const NavbarDrawer = () => {
             </Box>
           ))}
         </Box>
-        <Button variant="primary" sx={styles.donateNow}>
+        <Button variant="primary" sx={styles.donateNow}
+          onClick={() => {
+            window.location.href = "http://prevrun.net";
+          }}
+        >
           Go To Console
         </Button>
       </Box>
