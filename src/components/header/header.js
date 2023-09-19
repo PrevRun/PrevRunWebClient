@@ -59,7 +59,10 @@ export default function Header() {
                 <Flex sx={styles.buttonGroup}>
                   <Button
                     variant="text"
-                    sx={styles.getStarted}
+                    sx={{
+                      ...styles.getStarted,
+                      marginLeft: "auto", // Add this line to move the button to the right
+                    }}
                     onClick={() => {
                       window.location.href = "http://prevrun.net";
                     }}
@@ -111,9 +114,8 @@ const styles = {
     display: ["none", null, null, null, "flex"],
     alignItems: "center",
     // flexGrow: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     li: {
-      
       display: "flex",
       alignItems: "center",
       a: {
@@ -137,16 +139,21 @@ const styles = {
       color: "primary",
     },
   },
-  getStarted: {
-    backgroundColor: "#FFF0D7",
-    color: "#E6A740",
-    p: ["0 16px"],
-    minHeight: 45,
-    ml: [6],
-    display: ["none", null, null, null, "flex"],
-    marginLeft: 'auto'
-  },
-  // 
+//   buttonGroup: {
+//   position: 'absolute',
+//   right: '0',
+//   top: '50%',
+//   transform: 'translateY(-50%)',
+// },
+getStarted: {
+  backgroundColor: "#FFF0D7",
+  color: "#E6A740",
+  p: ["0 16px"],
+  minHeight: 45,
+},
+
+  
+  //
   menuButton: {
     position: "relative",
     right: "-6px",
