@@ -145,12 +145,16 @@ const styles = {
 //   top: '50%',
 //   transform: 'translateY(-50%)',
 // },
+// ...
 getStarted: {
   backgroundColor: "#FFF0D7",
   color: "#E6A740",
   p: ["0 16px"],
   minHeight: 45,
+  display: ["none", null, null, null, "block"], // Add this line to hide on mobile
 },
+// ...
+
 
   
   //
