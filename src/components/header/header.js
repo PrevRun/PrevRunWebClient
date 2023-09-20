@@ -37,10 +37,18 @@ export default function Header() {
           >
             <Container>
               <Box sx={styles.headerInner}>
+              <span
+                  sx={{
+                    fontSize: "1.4rem", // Adjust the font size as needed
+                    fontWeight: "bold", // Add bold styling
+                    color: "#FF5733", // Change the color to your preference
+                    // Add other styles as desired
+                  }}
+                >
                 {/* <Logo sx={styles.logo} isSticky={state.isSticky} /> */}
-                <Image src={prevrunLogo} sx={styles.logo} alt="Previous Run Logo" />
-
-                
+                {/* <Image src={prevrunLogo} sx={styles.logo} alt="Previous Run Logo" /> */}
+                  PrevRun
+                  </span>
                 <Flex
                   as="nav"
                   sx={styles.navbar}
