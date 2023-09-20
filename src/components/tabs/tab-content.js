@@ -9,9 +9,9 @@ const TabContent = ({ tabContent }) => {
         <Text as="p">{item.description}</Text>
         <Button onClick={() => window.location.href = 'https://prevrun.net'}>Go To Console</Button>
       </Box>
-      <Box
-        sx={{ backgroundImage: `url(${item?.image})`, ...styles.illustration }}
-      />
+      <Box sx={styles.imageContainer}>
+        <img src={item?.image} alt={item.title} />
+      </Box>
     </Box>
   ));
 };
@@ -44,15 +44,16 @@ const styles = {
       mt: [6, null, null, null, 7, null, 9],
     },
   },
-  illustration: {
-    alignItems: 'flex-start',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    borderRadius: '10px', // Add this line for border radius
-    display: 'flex',
+  imageContainer: {
+    borderRadius: '10px',
     minHeight: [256, null, null, 538, 470, 510, 633],
     mb: [5, null, null, null, 0],
     width: '100%',
+    overflow: 'hidden',
+    img: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    },
   },
-
 };

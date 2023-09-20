@@ -92,11 +92,24 @@ const Dashboard = () => {
     left: null,
     top: null,
   });
+
   useEffect(() => {
-    setContainerOffset({
-      left: containerRef.current.offsetLeft,
-      top: containerRef.current.offsetTop,
-    });
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setContainerOffset({
+          left: containerRef.current.offsetLeft,
+          top: containerRef.current.offsetTop,
+        });
+      }
+    };
+
+    handleResize(); // Initial call
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [containerRef]);
 
   return (
@@ -106,7 +119,7 @@ const Dashboard = () => {
         <Tabs
           sx={styles.tabs}
           animated={{ tabPane: true }}
-          defaultActiveKey="2"
+          defaultActiveKey="1"
         >
           {data?.map((tab) => (
             <TabPane key={tab?.id} tab={<TabTitle tab={tab.tabPane} />}>
@@ -128,7 +141,7 @@ const styles = {
     pb: [9, null, null, null, 0],
   },
   container: {
-    maxWidth: ["none !important"],
+    // maxWidth: ["none !important"],
     pr: [6, null, null, 0],
   },
   tabs: {
