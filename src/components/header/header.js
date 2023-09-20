@@ -6,6 +6,9 @@ import { DrawerProvider } from "contexts/drawer/drawer-provider";
 import NavbarDrawer from "./navbar-drawer";
 import Image from "components/image";
 import Logo from "components/logo";
+import prevrunLogo from "assets/images/prevrunLogo.png";
+
+
 import { NavLink } from "components/link";
 
 import menuItems from "./header.data";
@@ -34,7 +37,10 @@ export default function Header() {
           >
             <Container>
               <Box sx={styles.headerInner}>
-                <Logo sx={styles.logo} isSticky={state.isSticky} />
+                {/* <Logo sx={styles.logo} isSticky={state.isSticky} /> */}
+                <Image src={prevrunLogo} sx={styles.logo} alt="Previous Run Logo" />
+
+                
                 <Flex
                   as="nav"
                   sx={styles.navbar}
@@ -109,6 +115,7 @@ const styles = {
   },
   logo: {
     mr: [null, null, null, null, 30, 12],
+    maxWidth: "100px",
   },
   navbar: {
     display: ["none", null, null, null, "flex"],
