@@ -89,6 +89,7 @@ const styles = {
     "@media only screen and (min-width:1900px)": {
       pt: 10,
     },
+      overflowX: "hidden", 
   },
   bannerContent: {
     margin: [null, null, null, "0 auto", 0],

@@ -14,9 +14,18 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
     setId(Date.now());
   }, []);
 
+  const isFoulLanguage = (input) => {
+    const inputLower = input.toLowerCase();
+  }
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    
+
+    if (!email.trim()) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
     try {
       const response = await fetch('https://9mgyeggnj7.execute-api.us-east-1.amazonaws.com/lambda-user-dev?type=add_early_access_member', {
         method: 'POST',
