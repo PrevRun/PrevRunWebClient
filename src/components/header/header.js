@@ -4,11 +4,6 @@ import Sticky from "react-stickynode";
 import { useState } from "react";
 import { DrawerProvider } from "contexts/drawer/drawer-provider";
 import NavbarDrawer from "./navbar-drawer";
-import Image from "components/image";
-import Logo from "components/logo";
-import prevrunLogo from "assets/images/prevrunLogo.png";
-
-
 import { NavLink } from "components/link";
 
 import menuItems from "./header.data";
@@ -18,11 +13,21 @@ export default function Header() {
   const [state, setState] = useState({
     isMobileMenu: false,
     isSticky: false,
+    isDrawerOpen: false, // New state to track drawer open/close
   });
+
   const handleCloseMenu = () => {
     setState({
       ...state,
       isMobileMenu: false,
+      isDrawerOpen: false, // Close the drawer
+    });
+  };
+
+  const handleOpenDrawer = () => {
+    setState({
+      ...state,
+      isDrawerOpen: true, // Open the drawer
     });
   };
 
@@ -33,22 +38,34 @@ export default function Header() {
           <Box
             as="header"
             variant="layout.header"
-            className={state.isMobileMenu ? "is-mobile-menu" : ""}
+            className={`${
+              state.isMobileMenu ? "is-mobile-menu" : ""
+            } ${state.isDrawerOpen ? "drawer-open" : ""}`}
           >
             <Container>
               <Box sx={styles.headerInner}>
-              <span
+                <span
                   sx={{
-                    fontSize: "1.4rem", // Adjust the font size as needed
-                    fontWeight: "bold", // Add bold styling
-                    color: "#FF5733", // Change the color to your preference
-                    // Add other styles as desired
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    color: "gray",
+                    marginRight: "7rem",
+                    position: "relative",
                   }}
                 >
-                {/* <Logo sx={styles.logo} isSticky={state.isSticky} /> */}
-                {/* <Image src={prevrunLogo} sx={styles.logo} alt="Previous Run Logo" /> */}
-                  PrevRun
+                  <span
+                    sx={{
+                      color: "#FF5733",
+                      fontSize: "2.2rem",
+                      fontFamily: "cursive",
+                    }}
+                  >
+                    P
                   </span>
+                  revrun
+                  <span className="fiery-effect"></span>
+                </span>
+
                 <Flex
                   as="nav"
                   sx={styles.navbar}
@@ -75,7 +92,7 @@ export default function Header() {
                     variant="text"
                     sx={{
                       ...styles.getStarted,
-                      marginLeft: "auto", // Add this line to move the button to the right
+                      marginLeft: "auto",
                     }}
                     onClick={() => {
                       window.location.href = "http://prevrun.net";
@@ -90,6 +107,9 @@ export default function Header() {
           </Box>
         </Sticky>
       </Box>
+      <Box
+          className={`drawer-backdrop ${state.isDrawerOpen ? "show" : ""}`}
+      ></Box>
     </DrawerProvider>
   );
 }
@@ -119,7 +139,6 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    // position: ['relative', null, null, 'static'],
   },
   logo: {
     mr: [null, null, null, null, 30, 12],
@@ -128,7 +147,6 @@ const styles = {
   navbar: {
     display: ["none", null, null, null, "flex"],
     alignItems: "center",
-    // flexGrow: 1,
     justifyContent: "center",
     li: {
       display: "flex",
@@ -146,33 +164,39 @@ const styles = {
     p: 0,
     ".nav-item": {
       cursor: "pointer",
-      fontWeight: 400,
       padding: 0,
       margin: [null, null, null, null, "0 15px"],
-    },
-    ".active": {
-      color: "primary",
+      position: "relative",
+      "& a": {
+        transition: "color 0.3s ease-in-out",
+      },
+      "&.active": {
+        color: "primary",
+        "&::after": {
+          content: '""',
+          width: "8px",
+          height: "8px",
+          background: "gray",
+          borderRadius: "50%",
+          position: "absolute",
+          bottom: "-10px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          transition: "transform 0.3s ease-in-out",
+        },
+      },
+      "&:hover a": {
+        color: "primary",
+      },
     },
   },
-//   buttonGroup: {
-//   position: 'absolute',
-//   right: '0',
-//   top: '50%',
-//   transform: 'translateY(-50%)',
-// },
-// ...
-getStarted: {
-  backgroundColor: "#FFF0D7",
-  color: "#E6A740",
-  p: ["0 16px"],
-  minHeight: 45,
-  display: ["none", null, null, null, "block"], // Add this line to hide on mobile
-},
-// ...
-
-
-  
-  //
+  getStarted: {
+    backgroundColor: "#FFF0D7",
+    color: "#E6A740",
+    p: ["0 16px"],
+    minHeight: 45,
+    display: ["none", null, null, null, "block"],
+  },
   menuButton: {
     position: "relative",
     right: "-6px",
@@ -189,4 +213,43 @@ getStarted: {
       stroke: "text",
     },
   },
+  drawerBackdrop: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    backdropFilter: "blur(8px)",
+    zIndex: 99,
+    display: "none",
+  },
 };
+
+// Custom CSS for fiery effect
+const customCSS = `
+.fiery-effect {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(circle, #FF5733 0%, rgba(255, 87, 51, 0) 80%);
+  pointer-events: none;
+  animation: fieryEffect 1.5s infinite alternate;
+}
+
+@keyframes fieryEffect {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+`;
+
+export { customCSS };

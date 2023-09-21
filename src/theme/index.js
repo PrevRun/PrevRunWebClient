@@ -174,9 +174,9 @@ export default {
   // variants for buttons
   buttons: {
     menu: {
-      display: ['block', , , , 'none'],
+      // display: ['block', , , , 'none'],
       svg: {
-        width: '32px',
+        // width: '32px',
       },
     }, // default variant for MenuButton
     // you can reference other values defined in the theme
@@ -185,12 +185,14 @@ export default {
       fontFamily: 'body',
       fontWeight: 'bold',
       borderRadius: '5px',
+      padding: '10px 20px',  // Adjust the padding to your preference
+      margin: '5px 0',
       cursor: 'pointer',
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
       transition: '0.3s ease-in-out 0s',
-      whiteSpace: 'nowrap',
+      // whiteSpace: 'nowrap',
     },
     primary: {
       variant: 'buttons.default',
@@ -198,6 +200,7 @@ export default {
       bg: 'primary',
       minHeight: ['50px', '50px', '50px', '50px', '50px', '60px'],
       padding: ['0 25px', '0 25px', '0 25px', '0 30px'],
+      borderRadius: '6px',
       '&:hover': {
         bg: 'dark',
       },
@@ -264,6 +267,8 @@ export default {
     input: {
       borderRadius: 8,
       borderColor: 'borderColor',
+      padding: '10px 20px',  // Adjust the padding to your preference
+      margin: '5px 0',
       height: 60,
       '&:focus': {
         borderColor: 'primary',
@@ -271,6 +276,7 @@ export default {
         outline: 'none',
       },
     },
+    
   },
 
   badges: {
