@@ -117,11 +117,13 @@ const PriceTableWithMotion = ({ price, isAnnual }) => {
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.7 }}
       className="priceCard"
+      style={{ overflowY: 'hidden' }} // Set overflow-y to hidden
     >
       <PriceTable price={price} isAnnual={isAnnual} />
     </motion.div>
   );
 };
+
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -131,8 +133,8 @@ const Pricing = () => {
   };
 
   return (
-    <Box as="section" id="pricing" sx={styles.section}>
-      <Container>
+    <Box as="section" id="pricing" sx={{ ...styles.section }}>
+    <Container>
         <SectionHeading
           sx={styles.heading}
           title="What deal suit you perfect"
