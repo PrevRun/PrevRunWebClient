@@ -98,12 +98,13 @@ export default {
   ],
   // variants can use custom, user-defined names
   layout: {
-    container: {
-      maxWidth: ['100%', null, null, null, '970px', '1140px', '1260px'],
-      paddingLeft: [6, 6],
-      paddingRight: [6, 6],
-      m: '0 auto',
-    },
+     container: {
+    maxWidth: ['100%', null, null, null, '970px', '1140px', '1260px'],
+    paddingLeft: [6, 6],
+    paddingRight: [6, 6],
+    m: '0 auto',
+    overflowX: 'hidden', // Add this line to disable horizontal overflow
+  },
     toolbar: {
       display: 'flex',
       alignItems: 'center',
