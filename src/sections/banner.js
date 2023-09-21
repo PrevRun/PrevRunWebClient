@@ -76,7 +76,7 @@ export default Banner;
 const styles = {
   section: {
     backgroundColor: "#FFFCF7",
-    pt: [14, null, null, null, null, 0],
+    pt: [100, null, null, null, null, 0],
     pb: [6, null, null, 7, 11, 0],
   },
   contentWrapper: {
@@ -92,8 +92,8 @@ const styles = {
       overflowX: "hidden", 
   },
   bannerContent: {
-    margin: [null, null, null, "0 auto", 0],
-    maxWidth: [null, null, null, 600, "none"],
+    // margin: [null, null, null, "0 auto", 0],
+    // maxWidth: [null, null, null, 600, "none"],
     textAlign: [null, null, null, "center", "left"],
     h1: {
       fontWeight: 700,
@@ -116,24 +116,24 @@ const styles = {
     },
   },
   subscriptionForm: {
-    maxWidth: [null, null, null, 470, "none"],
-    m: [null, null, null, "30px auto", "30px 0 0"],
     mt: [6],
     input: {
       backgroundColor: "#FFFFFF",
       border: "0 none",
       fontFamily: "body",
       fontSize: [1, null, null, null, 2],
-      px: [5],
       boxShadow: "0px 16px 40px rgba(72, 59, 26, 0.08)",
-      minHeight: [40, 50, null, null, null, 60],
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      px: [3], // Adjust the padding here
+      width: "100%", // Make sure the input takes full width on smaller screens
     },
     button: {
-      fontSize: [0, 1, null, null, 2],
-      minHeight: [40, 50, null, null, null, 60],
+      fontSize: [0, 1, null, null, 1], // Adjust the fontSize here
+      minHeight: ["40px"], // Adjust the minHeight here
+      px: [3], // Adjust the padding here
     },
   },
+  
+  
   sponsoredBy: {
     alignItems: "center",
     maxWidth: [null, null, null, 470, "none"],

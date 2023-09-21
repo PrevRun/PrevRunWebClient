@@ -42,8 +42,10 @@ const styles = {
   subscriptionForm: {
     m: ['30px auto 0'],
     maxWidth: [555],
-    flexDirection: ['column', null, null, 'row'],
+    flexDirection: ['row'], // Change this to 'row'
+    alignItems: 'center',   // Align items in a row
     input: {
+      flex: '1',            // Take up remaining space in the row
       backgroundColor: rgba('white', 0.08),
       border: '0 none',
       color: rgba('white', 0.8),
@@ -51,7 +53,6 @@ const styles = {
       px: [5],
       minHeight: [50, null, null, null, 60],
       boxShadow: '0px 16px 40px rgba(72, 59, 26, 0.08)',
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
       '::placeholder': {
         color: rgba('white', 0.8),
         opacity: 1 /* Firefox */,
@@ -60,8 +61,8 @@ const styles = {
     button: {
       fontSize: [1, null, null, 2],
       minHeight: [50, null, null, null, 60],
-      ml: [0, null, null, 3],
-      mt: [4, null, null, 0],
+      ml: [3], // Add margin to the left for some space between input and button
+      mt: [0], // Remove top margin to align with input
     },
   },
 };

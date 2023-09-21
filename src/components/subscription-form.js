@@ -9,14 +9,21 @@ const AnimatedButton = motion.custom(Button);
 const SubscriptionForm = ({ buttonLabel, ...props }) => {
   const [id, setId] = useState('');
   const [email, setEmail] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setId(Date.now());
-  }, []);
 
-  const isFoulLanguage = (input) => {
-    const inputLower = input.toLowerCase();
-  }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -62,7 +69,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
       <AnimatedInput
         type="email"
         id={`email-${id}`}
-        placeholder="Enter Email address"
+        placeholder="Enter Email Id"
         value={email} // Connect the input value to the state
         onChange={(e) => setEmail(e.target.value)} // Update the email state on input change
         initial={{ opacity: 0, x: -20 }} // Initial styles (fade in and slide in from left)
@@ -70,12 +77,13 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
         transition={{ duration: 0.8, delay: 0.4 }} // Animation duration and delay
       />
       <AnimatedButton
-        type="submit" // Add type="submit" to the button
-        initial={{ opacity: 0, x: -20 }} // Initial styles (fade in and slide in from left)
-        animate={{ opacity: 1, x: 10 }} // Animation styles (fade in and slide in from left)
-        transition={{ duration: 0.8, delay: 0.4 }} // Animation duration and delay
+        type="submit"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 10 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        sx={styles.button} // Apply the button styles here
       >
-        {buttonLabel ?? 'Get Early Access'}
+        {isMobile ? 'Submit' : (buttonLabel ?? 'Get Early Access')}
       </AnimatedButton>
     </AnimatedFlex>
   );
@@ -83,17 +91,22 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
 
 export default SubscriptionForm;
 
+
 const styles = {
   form: {
+    display: 'flex', // Add this to make form elements inline
+    alignItems: 'center', // Align items vertically
     input: {
-      flexGrow: 1,
-      p: ['0 20px', null, null, null, '0 25px'],
-      minHeight: [60],
+      minHeight: [50],
       height: 'auto',
       width: 'auto',
+      flex: '1', // Take up remaining space
+      borderRadius: '10px', // Add border radius
+      mr: [2], // Add some margin to the right for spacing between input and button
     },
     button: {
-      ml: [3],
+      borderRadius: '10px', // Add border radius
+      minHeight: [50],
     },
   },
 };
