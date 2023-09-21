@@ -92,6 +92,7 @@ const Dashboard = () => {
     left: null,
     top: null,
   });
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -107,6 +108,18 @@ const Dashboard = () => {
 
     window.addEventListener("resize", handleResize);
 
+    // Preload images
+    const images = [dashboard, optimizeWorkflow, uploadVideo, security].map(src => {
+      const image = new Image();
+      image.src = src;
+      return image;
+    });
+
+    Promise.all(images.map(image => new Promise(resolve => image.onload = resolve)))
+      .then(() => {
+        setImagesLoaded(true);
+      });
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -115,24 +128,29 @@ const Dashboard = () => {
   return (
     <Box as="section" id="services" sx={styles.section}>
       <Container ref={containerRef} />
-      <Box sx={{ pl: containerOffset.left + 20, ...styles.container }}>
-        <Tabs
-          sx={styles.tabs}
-          animated={{ tabPane: true }}
-          defaultActiveKey="1"
-        >
-          {data?.map((tab) => (
-            <TabPane key={tab?.id} tab={<TabTitle tab={tab.tabPane} />}>
-              <TabContent tabContent={tab?.tabContent} />
-            </TabPane>
-          ))}
-        </Tabs>
-      </Box>
+      {imagesLoaded ? (
+        <Box sx={{ pl: containerOffset.left + 20, ...styles.container }}>
+          <Tabs
+            sx={styles.tabs}
+            animated={{ tabPane: true }}
+            defaultActiveKey="1"
+          >
+            {data?.map((tab) => (
+              <TabPane key={tab?.id} tab={<TabTitle tab={tab.tabPane} />}>
+                <TabContent tabContent={tab?.tabContent} />
+              </TabPane>
+            ))}
+          </Tabs>
+        </Box>
+      ) : (
+        <div>Loading...</div> 
+      )}
     </Box>
   );
 };
 
 export default Dashboard;
+
 
 const styles = {
   section: {
@@ -198,8 +216,8 @@ const styles = {
       bottom: [47],
       display: ["none", null, null, "block"],
     },
-    ".rc-tabs-tabpane": {
-      outline: "0 none",
-    },
+    // ".rc-tabs-tabpane": {
+    //   outline: "0 none",
+    // },
   },
 };
