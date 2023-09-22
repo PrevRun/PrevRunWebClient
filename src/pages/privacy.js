@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
       <h2>9. Contact Us</h2>
       <p>
         If you have any questions or concerns regarding this Privacy Policy,
-        please contact us at nijmehar16@gmail.com.
+        please contact us at <a href="mailto:prevrun.inc@gmail.com">prevrun.inc@gmail.com</a>.
       </p>
     </div>
   );

@@ -5,24 +5,8 @@ import { useEffect, useState } from "react"; // Import useEffect and useState
 import Image from "components/image";
 import SubscriptionForm from "components/subscription-form";
 import illustration from "assets/images/banner.png";
-import paypal from "assets/images/paypal.png";
-import google from "assets/images/google.png";
-import dropbox from "assets/images/dropbox.png";
 
-const logos = [
-  {
-    name: "Paypal",
-    src: paypal,
-  },
-  {
-    name: "Google",
-    src: google,
-  },
-  {
-    name: "Dropbox",
-    src: dropbox,
-  },
-];
+
 
 const Banner = () => {
   // Use useState to track animation trigger

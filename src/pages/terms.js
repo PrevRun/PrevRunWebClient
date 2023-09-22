@@ -97,7 +97,7 @@ const Terms = () => {
       <h2>12. Contact Information</h2>
       <p>
         If you have any questions or concerns regarding these Terms, please
-        contact us at <a href="mailto:<something>.com">something@gmail.com</a>.
+        contact us at <a href="mailto:prevrun.inc@gmail.com">prevrun.inc@gmail.com</a>.
       </p>
 
       <h2>13. Entire Agreement</h2>

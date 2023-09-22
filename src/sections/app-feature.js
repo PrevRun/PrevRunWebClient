@@ -4,7 +4,6 @@ import { motion } from "framer-motion"; // Import motion from framer-motion
 import SectionHeading from "components/section-heading";
 import { LearnMore } from "components/link";
 import app from "assets/images/app.png";
-import emoji from "assets/images/icons/emoji.png";
 import check from "assets/images/icons/check-circle.png";
 
 const data = [
