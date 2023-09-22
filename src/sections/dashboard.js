@@ -172,15 +172,17 @@ const styles = {
       "::before": {
         backgroundColor: rgba("#fff", 0.1),
         content: ["none", null, null, `''`],
-        height: 1,
+        height: 2, // Increase the height for a smoother look
         position: "absolute",
         left: 0,
         top: 51,
         width: "100%",
       },
       "::after": {
-        borderColor: ["primary"],
+        borderColor: "gray",
       },
+      width: "110%", 
+      borderRadius: 10, 
     },
     ".rc-tabs-nav-list": {
       display: ["flex"],
