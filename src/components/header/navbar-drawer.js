@@ -55,8 +55,9 @@ const NavbarDrawer = () => {
         >
           <Box
             sx={{
-              color: "primary",
+              color: "#FF5733",
               fontSize: "2.2rem",
+              fontFamily: "cursive",
             }}
           >
             P
