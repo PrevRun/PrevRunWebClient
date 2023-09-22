@@ -1,8 +1,5 @@
 /** @jsx jsx */
 import { jsx, Container, Grid, Box, Flex, Heading, Text } from "theme-ui";
-import Image from "components/image";
-import support from "assets/images/support.png";
-import rightArrow from "assets/images/icons/right-arrow.png";
 
 const Support = () => {
   return (
