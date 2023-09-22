@@ -5,4 +5,12 @@ const nextConfiguration = {
   target: 'serverless', 
 };
 
-module.exports = withPlugins([optimizedImages], nextConfiguration);
+module.exports = withPlugins(
+  [
+    [optimizedImages],
+    {
+      trailingSlash: true,
+    },
+  ],
+  nextConfiguration
+);
