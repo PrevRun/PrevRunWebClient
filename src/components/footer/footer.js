@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Flex, Box, Text, Container } from 'theme-ui';
 import { rgba } from 'polished';
-import { Link } from 'components/link';
 import Logo from 'components/logo';
+import Link from './link'
 
 export default function Footer() {
   return (
@@ -10,10 +10,17 @@ export default function Footer() {
       <Container>
         <Flex sx={styles.footerInner}>
           <Flex sx={styles.copyright}>
-            {/* <Logo isWhite /> */}
             <Text as="span">
               &copy; Copyright by {new Date().getFullYear()} PrevRun
             </Text>
+            <Flex sx={styles.links}>
+              <Link to="/terms" variant="footer">
+                Terms Of Use
+              </Link>
+              <Link to="/privacy" variant="footer">
+                Privacy Policy
+              </Link>
+            </Flex>
           </Flex>
         </Flex>
       </Container>
