@@ -7,7 +7,6 @@ import NavbarDrawer from "./navbar-drawer";
 import { NavLink } from "components/link";
 
 import menuItems from "./header.data";
-import lock from "assets/images/icons/lock.png";
 
 export default function Header() {
   const [state, setState] = useState({
