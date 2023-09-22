@@ -5,10 +5,11 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { rgba } from "polished";
 
 const PriceTable = ({ price, isAnnual }) => {
+
   const handleClick = () => {
-    const element = document.getElementById("home");
+    const element = document.getElementById('home');
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -23,10 +24,10 @@ const PriceTable = ({ price, isAnnual }) => {
         </Heading>
         <Text as="p" sx={styles.priceAmount}>
           {isAnnual
-            ? `$${price?.amount?.annual.toFixed(2)}/yr`
-            : `$${price?.amount?.monthly.toFixed(2)}/mo`}
+            ? `$${price?.amount?.annual.toFixed(2)}`
+            : `$${price?.amount?.monthly.toFixed(2)}`}
+          /mo
         </Text>
-
         <Text as="p" sx={styles.subtitle}>
           {price.subtitle}
         </Text>
@@ -48,7 +49,7 @@ const PriceTable = ({ price, isAnnual }) => {
         ))}
       </Box>
       <Box className="priceButton">
-        <Button sx={styles.button} variant="primaryMd" onClick={handleClick}>
+      <Button sx={styles.button} variant="primaryMd" onClick={handleClick}>
           {price.buttonText}
         </Button>
       </Box>

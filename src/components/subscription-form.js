@@ -79,7 +79,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
       <AnimatedButton
         type="submit"
         initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+        animate={{ opacity: 1, x: 10 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         sx={styles.button} // Apply the button styles here
       >

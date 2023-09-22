@@ -15,8 +15,8 @@ const data = [
     title: 'Startup Pack',
     subtitle: 'For influencers who are just beginning and have modest storage needs',
     amount: {
-      monthly: 29.99,
-      annual: 29.99 * 12 - 10,
+      monthly: 25.99,
+      annual: 25.99 * 12 - 10,
     },
     isRecommended: false,
     buttonText: 'Subscribe',
