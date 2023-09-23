@@ -56,7 +56,6 @@ export default function Header() {
                     sx={{
                       color: "primary",
                       fontSize: "2.2rem",
-                      fontFamily: "cursive",
                     }}
                   >
                     P

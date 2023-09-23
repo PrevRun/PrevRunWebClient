@@ -11,7 +11,7 @@ export default function Footer() {
         <Flex sx={styles.footerInner}>
           <Flex sx={styles.copyright}>
             <Text as="span">
-              &copy; Copyright by {new Date().getFullYear()} PrevRun
+              &copy; Copyright by {new Date().getFullYear()} Prevrun
             </Text>
           </Flex>
           <Flex sx={styles.link}>

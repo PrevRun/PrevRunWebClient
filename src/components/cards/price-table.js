@@ -35,7 +35,7 @@ const PriceTable = ({ price, isAnnual }) => {
       <Box as="ul" sx={styles.list}>
         {price?.features?.map((feat) => (
           <li key={feat.id} className={!feat.isAvailable ? "unavailable" : ""}>
-            {feat.isAvailable ? (
+            {/* {feat.isAvailable ? (
               <span>
                 <IoMdCheckmarkCircle sx={{ color: "primary" }} size="23px" />
               </span>
@@ -43,15 +43,15 @@ const PriceTable = ({ price, isAnnual }) => {
               <span>
                 <IoIosCloseCircle color="#CED7E1" size="23px" />
               </span>
-            )}
+            )} */}
             <span>{feat.title}</span>
           </li>
         ))}
       </Box>
       <Box className="priceButton">
-      <Button sx={styles.button} variant="primaryMd" onClick={handleClick}>
+      {/* <Button sx={styles.button} variant="primaryMd" onClick={handleClick}>
           {price.buttonText}
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   );
