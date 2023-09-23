@@ -112,7 +112,7 @@ const PriceTableWithMotion = ({ price, isAnnual }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.7 }}
-      className="priceCard"
+      className={`priceCard ${isAnnual ? 'annualCard' : ''}`}
       style={{ overflowY: 'hidden' }} // Set overflow-y to hidden
     >
       <PriceTable price={price} isAnnual={isAnnual} />
@@ -221,6 +221,7 @@ const styles = {
       '.priceButton': {
         animation: `${fadeIn} 1.1s linear`,
       },
+      
     },
   },
 };

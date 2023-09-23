@@ -3,7 +3,10 @@ import React from 'react';
 const PrivacyPolicy = () => {
   return (
     <div style={styles.section}>
-      <h1>PrevRun Privacy Policy</h1>
+      <div style={styles.center}>
+        <h1>Prevrun</h1>
+      </div>
+      <h2 style={styles.center}>Privacy Policy</h2>
 
       <p>Last Updated: 7th September 2023</p>
 
@@ -81,7 +84,7 @@ const PrivacyPolicy = () => {
       <p>
         You have the right to access, correct, or delete your personal
         information. You may also opt-out of certain communications from us.
-        Please contact us at [contact email] for assistance with these requests.
+        Please contact us at <a href="mailto:prevrun.inc@gmail.com">prevrun.inc@gmail.com </a>for assistance with these requests.
       </p>
 
       <h2>6. Security</h2>
@@ -125,6 +128,9 @@ const styles = {
     borderRadius: "10px",
     margin: "0 auto",
     fontFamily: "Arial, sans-serif",
+  },
+  center: {
+    textAlign: "center", // Center align text
   },
   h2: {
     color: "#333",
