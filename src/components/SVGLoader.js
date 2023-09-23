@@ -5,11 +5,12 @@ const SVGLoader = () => (
     <style>
       {`
         body {
-          background: #e3f2fd;
+          background: "#FFC059";
         }
         svg {
           position: absolute; 
           width: 100%; height: 100%;
+          animation: fadeOut 2s forwards; /* Add fade-out animation */
         }
         svg text {
           animation: stroke 2s alternate;
@@ -20,34 +21,45 @@ const SVGLoader = () => (
         }
         @media screen and (max-width: 768px) {
           svg text {
-            fontSize: 15em; /* Adjust font size for smaller screens */
+            font-size: 35vh;
+          }
+          body {
+            overflow-y: hidden;
           }
         }
         @keyframes stroke {
           0%   {
-              fill: rgba(255, 192, 89, 0); /* Inner fill color (#FFC059) */
-              stroke: rgba(218, 165, 32, 1); /* Golden outline color */
+              fill: rgba(255, 192, 89, 0);
+              stroke: rgba(218, 165, 32, 1);
               stroke-dashoffset: 25%; 
               stroke-dasharray: 0 50%; 
               stroke-width: 2;
           }
-          70%  {
-              fill: rgba(255, 192, 89, 0); /* Inner fill color (#FFC059) */
-              stroke: rgba(218, 165, 32, 1); /* Golden outline color */
+          40%  {
+              fill: rgba(255, 192, 89, 0);
+              stroke: rgba(218, 165, 32, 1);
           }
-          80%  {
-              fill: rgba(255, 192, 89, 0); /* Inner fill color (#FFC059) */
-              stroke: rgba(218, 165, 32, 1); /* Golden outline color */
+          70%  {
+              fill: rgba(255, 192, 89, 0);
+              stroke: rgba(218, 165, 32, 1);
               stroke-width: 3; 
           }
-          100% {
-              fill: rgba(255, 192, 89, 1); /* Inner fill color (#FFC059) */
-              stroke: rgba(218, 165, 32, 0); /* Transparent outline */
+          98% {
+              fill: rgba(255, 192, 89, 1);
+              stroke: rgba(218, 165, 32, 0);
               stroke-dashoffset: -25%; 
               stroke-dasharray: 50% 0; 
               stroke-width: 0;
           }
-      }
+        }
+        @keyframes fadeOut {
+          98%   {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
       `}
     </style>
     <svg viewBox="0 0 1320 300">
