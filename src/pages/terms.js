@@ -3,7 +3,10 @@ import React from 'react';
 const Terms = () => {
   return (
     <div style={styles.section}>
-      <h1>Terms and Conditions</h1>
+      <div style={styles.center}>
+        <h1>Prevrun</h1>
+      </div>
+      <h2 style={styles.center}>Terms and Conditions</h2>
 
       <p>Last Updated: 7th September 2023</p>
 
@@ -130,6 +133,9 @@ const styles = {
     borderRadius: "10px",
     margin: "0 auto",
     fontFamily: "Arial, sans-serif",
+  },
+  center: {
+    textAlign: "center", // Center align text
   },
   h2: {
     color: "#333",
