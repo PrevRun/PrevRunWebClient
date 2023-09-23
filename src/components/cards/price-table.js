@@ -4,7 +4,7 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 import { IoIosCloseCircle } from "react-icons/io";
 import { rgba } from "polished";
 
-const PriceTable = ({ price, isAnnual }) => {
+const PriceTable = ({ price, isAnnual, isPremium }) => {
 
   const handleClick = () => {
     const element = document.getElementById('home');
@@ -22,7 +22,7 @@ const PriceTable = ({ price, isAnnual }) => {
         <Heading as="h3" sx={styles.title}>
           {price.title}
         </Heading>
-        <Text as="p" sx={styles.priceAmount}>
+        <Text as="p" sx={{ ...styles.priceAmount, color: isPremium ? "red" : "primary" }}>
           {isAnnual
             ? `$${price?.amount?.annual.toFixed(2)}`
             : `$${price?.amount?.monthly.toFixed(2)}`}
@@ -35,23 +35,14 @@ const PriceTable = ({ price, isAnnual }) => {
       <Box as="ul" sx={styles.list}>
         {price?.features?.map((feat) => (
           <li key={feat.id} className={!feat.isAvailable ? "unavailable" : ""}>
-            {feat.isAvailable ? (
-              <span>
-                <IoMdCheckmarkCircle sx={{ color: "primary" }} size="23px" />
-              </span>
-            ) : (
-              <span>
-                <IoIosCloseCircle color="#CED7E1" size="23px" />
-              </span>
-            )}
             <span>{feat.title}</span>
           </li>
         ))}
       </Box>
       <Box className="priceButton">
-      <Button sx={styles.button} variant="primaryMd" onClick={handleClick}>
+        {/* <Button sx={styles.button} variant="primaryMd" onClick={handleClick}>
           {price.buttonText}
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   );
@@ -62,11 +53,13 @@ export default PriceTable;
 const styles = {
   priceTable: {
     background: "white",
+    boxShadow: "0px 20px 80px rgba(62, 95, 119, 0.2)", // Adjusted boxShadow values
+
     borderRadius: 10,
-    position: "relative",
+    // position: "relative",
     padding: ["40px 20px", null, null, null, "45px 50px 70px"],
     "&.recommended": {
-      boxShadow: "0px 10px 60px rgba(62, 95, 119, 0.08)",
+      boxShadow: "0px 20px 80px rgba(62, 95, 119, 0.2)", // Adjusted boxShadow values
       padding: ["55px 20px", null, null, null, "65px 60px 90px"],
       mt: [6, null, null, 0],
       button: {
@@ -89,7 +82,6 @@ const styles = {
     letterSpacing: "-0.55px",
   },
   priceAmount: {
-    color: "primary",
     fontWeight: 700,
     fontSize: "26px",
     lineHeight: 1.39,

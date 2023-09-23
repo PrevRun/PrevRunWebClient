@@ -18,14 +18,15 @@ const Preloader = () => {
         width: '100%',
         height: '100%'
       }}>
-        <text x="50%" y="50%" dy=".35em" textAnchor="middle" style={{
+        <text x="50%" y="50%"  textAnchor="middle" style={{
           animation: 'stroke 3s  alternate',
           strokeWidth: '2',
           stroke: '#DAA520',
           fill: '#FFC059',
           fontSize: '140px'
+          
         }}>
-          Prevun
+          Prevrun
         </text>
       </svg>
       <style jsx global>{`
@@ -53,30 +54,10 @@ const Preloader = () => {
             stroke-dasharray: 50% 0;
             stroke-width: 0;
           }
+          
+          
         }
-        @media (max-width: 390px) {
-          svg text {
-            fontSize: 4em; /* Adjust the font size for small devices */
-          }
-        }
-
-        @media (max-width: 576px) {
-          svg text {
-            fontSize: 60px; /* Adjust the font size for small devices */
-          }
-        }
-
-        @media (min-width: 577px) and (max-width: 767px) {
-          svg text {
-            fontSize: 80px; /* Adjust the font size for medium devices */
-          }
-        }
-
-        @media (min-width: 768px) {
-          svg text {
-            fontSize: 100px; /* Adjust the font size for large devices */
-          }
-        }
+        
       `}</style>
     </div>
   );

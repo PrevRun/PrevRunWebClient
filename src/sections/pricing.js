@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 
+
 const data = [
   {
     id: 1,
@@ -99,68 +100,6 @@ const data = [
   },
 ];
 
-const PriceTableWithMotion = ({ price, isAnnual }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Only trigger once when element comes into view
-  });
-
-  useEffect(() => {
-    if (inView) {
-      // If element is in view, trigger animation here
-    }
-  }, [inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
-      transition={{ duration: 0.7 }}
-      className="priceCard"
-      style={{ overflowY: 'hidden' }} // Set overflow-y to hidden
-    >
-      <PriceTable price={price} isAnnual={isAnnual} />
-    </motion.div>
-  );
-};
-
-
-const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
-
-  const handlePlan = () => {
-    setIsMonthly(!isMonthly);
-  };
-
-  return (
-    <Box as="section" id="pricing" sx={{ ...styles.section }}>
-    <Container>
-        <SectionHeading
-          sx={styles.heading}
-          title="What deal suit you perfect"
-          description="Meet our pricing plan"
-        />
-        <Flex sx={styles.priceSwitcher}>
-          <Text as="span">Monthly Plan</Text>
-          <Switch isMonthly={isMonthly} handlePlan={handlePlan} />
-          <Text as="span">Annual Plan</Text>
-        </Flex>
-        <Box sx={styles.priceWrapper}>
-          {data?.map((price, index) => (
-            <PriceTableWithMotion
-              price={price}
-              isAnnual={!isMonthly}
-              key={`${isMonthly}-${index}`}
-            />
-          ))}
-        </Box>
-      </Container>
-    </Box>
-  );
-};
-
-export default Pricing;
-
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -227,4 +166,72 @@ const styles = {
       },
     },
   },
+
+  // Add or update styles for the Premium Pack section
+  priceCardPremium: {
+    backgroundColor: 'goldenrod', // Set background color to goldenrod
+    color: '#fff', // Set text color to white
+    // Add any other custom styles you want for the premium pack
+  },
 };
+
+const PriceTableWithMotion = ({ price, isAnnual }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // If element is in view, trigger animation here
+    }
+  }, [inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 0.7 }}
+      className="priceCard"
+      style={{ overflowY: 'hidden' }}
+    >
+      <PriceTable price={price} isAnnual={isAnnual} />
+    </motion.div>
+  );
+};
+
+const Pricing = () => {
+  const [isMonthly, setIsMonthly] = useState(true);
+
+  const handlePlan = () => {
+    setIsMonthly(!isMonthly);
+  };
+
+  return (
+    <Box as="section" id="pricing" sx={{ ...styles.section }}>
+      <Container>
+        <SectionHeading
+          sx={styles.heading}
+          title="What deal suits you perfectly"
+          description="Meet our pricing plan"
+        />
+        <Flex sx={styles.priceSwitcher}>
+          <Text as="span">Monthly Plan</Text>
+          <Switch isMonthly={isMonthly} handlePlan={handlePlan} />
+          <Text as="span">Annual Plan</Text>
+        </Flex>
+        <Box sx={styles.priceWrapper}>
+          {data?.map((price, index) => (
+            <PriceTableWithMotion
+              price={price}
+              isAnnual={!isMonthly}
+              key={`${isMonthly}-${index}`}
+            />
+          ))}
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+export default Pricing;

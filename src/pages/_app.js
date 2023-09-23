@@ -27,7 +27,7 @@ export default function CustomApp({ Component, pageProps }) {
   useEffect(() => {
     if (firstLoad) {
       // Simulate loading for 3 seconds
-      setTimeout(() => setFirstLoad(false), 3000);
+      setTimeout(() => setFirstLoad(false), 2500);
     }
   }, [firstLoad]);
 
