@@ -41,11 +41,7 @@ const data = [
         isAvailable: true,
         title: 'A generous 50 GB of usable storage space',
       },
-      {
-        id: 5,
-        isAvailable: false,
-        title: 'Advanced Collaboration Tools'
-      },
+      
       {
         id: 6,
         isAvailable: false,

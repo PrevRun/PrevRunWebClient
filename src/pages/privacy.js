@@ -123,7 +123,6 @@ const styles = {
     backgroundColor: "#FFFCF7",
     padding: "20px",
     borderRadius: "10px",
-    maxWidth: "1250px",
     margin: "0 auto",
     fontFamily: "Arial, sans-serif",
   },
