@@ -5,7 +5,7 @@ const SVGLoader = () => (
     <style>
       {`
         body {
-          background: "#FFC059";
+          background: #FFFCF7;
         }
         svg {
           position: absolute; 
