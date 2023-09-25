@@ -139,6 +139,7 @@ const styles = {
     },
     p: {
       fontSize: [null, null, null, 2],
+      mb: [4, null, null, null],
     },
   },
   illustration: {
