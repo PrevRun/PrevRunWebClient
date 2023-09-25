@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Heading } from 'theme-ui';
 import { BsArrowRight } from 'react-icons/bs';
+import { useState } from 'react'; // Add this import
 import { BaseAccordion } from './base-accordion';
 import {
   AccordionButton,
@@ -12,26 +13,35 @@ import {
 } from './shared';
 import { rgba } from 'polished';
 
+
 export default function Accordion({ items, ...props }) {
+  const [openIndex, setOpenIndex] = useState(null); // Use a single state for open accordion
+
+  const handleItemClick = (index) => {
+    setOpenIndex((prevOpenIndex) =>
+      prevOpenIndex === index ? null : index
+    );
+  };
+
   return (
     <BaseAccordion
       stateReducer={combineReducers(single, preventClose)}
       {...props}
     >
-      {({ openIndexes, handleItemClick }) => (
+      {() => (
         <>
           {items.map((item, index) => (
             <AccordionItem
               key={item.title}
               sx={styles.accordion}
-              isOpen={openIndexes.includes(index)}
-              className={openIndexes.includes(index) ? 'is-open' : 'is-closed'}
+              isOpen={openIndex === index}
+              className={openIndex === index ? 'is-open' : 'is-closed'}
             >
               <AccordionButton onClick={() => handleItemClick(index)}>
                 <Heading as="h3" sx={styles.title}>
-                  {item.title}
+                  <strong>{item.title}</strong> {/* Make the title bold */}
                 </Heading>
-                {!openIndexes.includes(index) && (
+                {openIndex !== index && ( // Change condition to update arrow
                   <BsArrowRight
                     size="28px"
                     color={rgba('#0F2137', 0.3)}
@@ -40,7 +50,7 @@ export default function Accordion({ items, ...props }) {
                 )}
               </AccordionButton>
               <AccordionContents
-                isOpen={openIndexes.includes(index)}
+                isOpen={openIndex === index}
                 sx={styles.content}
               >
                 {item.contents}
@@ -55,6 +65,7 @@ export default function Accordion({ items, ...props }) {
 
 const styles = {
   accordion: {
+    mt: [null, null, null, null, '20px'], // Adjust the value for small devices
     backgroundColor: '#F6F8FB',
     borderRadius: 10,
     p: ['15px', '20px 30px', '30px 45px', '20px 25px', '20px 35px'],

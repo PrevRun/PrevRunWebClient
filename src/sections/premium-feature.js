@@ -35,7 +35,7 @@ const data = [
   {
     title: "Mobile-Friendly",
     contents: (
-      <div>Access Prevrun from anywhere, even on the go. coming soon" </div>
+      <div>Access Prevrun from anywhere, anytime </div>
     ),
   },
 ];
