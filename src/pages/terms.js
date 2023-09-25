@@ -137,23 +137,33 @@ const styles = {
   center: {
     textAlign: "center", // Center align text
   },
+  h1: {
+    fontSize: "24px", // Adjust font size
+  },
   h2: {
     color: "#333",
     marginBottom: "10px",
+    fontSize: "20px", // Adjust font size
+  },
+  small: {
+    color: "#555",
+    marginBottom: "15px",
+    fontSize: "14px", // Adjust font size
   },
   p: {
     color: "#555",
     marginBottom: "15px",
-    fontSize: "16px",
+    fontSize: "14px", // Adjust font size
   },
   ul: {
     listStyleType: "disc",
     paddingLeft: "20px",
     marginBottom: "15px",
+    fontSize: "14px", // Adjust font size
   },
   li: {
     color: "#555",
-    fontSize: "16px",
+    fontSize: "14px", // Adjust font size
   },
   a: {
     color: "#007BFF",

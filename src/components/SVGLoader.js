@@ -15,9 +15,18 @@ const SVGLoader = () => (
         svg text {
           animation: stroke 2s alternate;
           stroke-width: 2;
-          stroke: #DAA520;
+          stroke: #800080; /* Dark purple color */
           fill: #FFC059;
           font-size: 140px;
+          font-family: 'Arial', sans-serif; /* Set font to Arial */
+        }
+        @media screen and (max-width: 768px) {
+          svg text {
+            font-size: 35vh;
+          }
+          body {
+            overflow-y: hidden;
+          }
         }
         @media screen and (max-width: 768px) {
           svg text {
@@ -45,7 +54,7 @@ const SVGLoader = () => (
               stroke-width: 3; 
           }
           98% {
-              fill: rgba(255, 192, 89, 1);
+              fill: #1F305E;
               stroke: rgba(218, 165, 32, 0);
               stroke-dashoffset: -25%; 
               stroke-dasharray: 50% 0; 
