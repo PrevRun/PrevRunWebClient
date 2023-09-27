@@ -93,7 +93,7 @@ export default function Header() {
                       marginLeft: "auto",
                     }}
                     onClick={() => {
-                      window.location.href = "http://prevrun.net";
+                      window.location.href = "https://console.prevrun.net/";
                     }}
                   >
                     Go To Console

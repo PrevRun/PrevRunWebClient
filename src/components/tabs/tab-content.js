@@ -7,7 +7,7 @@ const TabContent = ({ tabContent }) => {
       <Box sx={styles.content}>
         <Heading>{item.title}</Heading>
         <Text as="p">{item.description}</Text>
-        <Button onClick={() => window.location.href = 'https://prevrun.net'}>Go To Console</Button>
+        <Button onClick={() => window.location.href = 'https://console.prevrun.net/'}>Go To Console</Button>
       </Box>
       <Box sx={styles.imageContainer}>
         <img src={item?.image} alt={item.title} />
