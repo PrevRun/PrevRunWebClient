@@ -55,7 +55,6 @@ jobs:
 
       - name: Export static asset
         run: npm run export
-
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         with:
