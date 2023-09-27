@@ -84,7 +84,7 @@ const NavbarDrawer = () => {
           variant="primary"
           sx={styles.donateNow}
           onClick={() => {
-            window.location.href = "http://prevrun.net";
+            window.location.href = "https://console.prevrun.net/";
           }}
         >
           Go To Console
