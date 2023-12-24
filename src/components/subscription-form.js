@@ -34,7 +34,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
     }
 
     try {
-      const response = await fetch('https://apis.prevrun.net/lambda-user-dev?type=add_early_access_member', {
+      const response = await fetch('https://apis.prevrun.net/lambda-user-prod?type=add_early_access_member', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
